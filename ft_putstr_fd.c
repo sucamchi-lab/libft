@@ -1,7 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/28 21:07:17 by scamlett          #+#    #+#             */
+/*   Updated: 2026/03/28 21:07:23 by scamlett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    (void)s;
-    (void)fd;
+	if (!s)
+	{
+		return ;
+	}
+	while (*s)
+	{
+		write(fd, s, 1);
+		s++;
+	}
 }

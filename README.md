@@ -1,43 +1,54 @@
+*Este proyecto ha sido creado como parte del curriculo de 42 por scamlett.*
+
 # libft
 
-Biblioteca personal de funciones en C.
+## Descripcion
+`libft` es una libreria en C que reimplementa funciones base de `libc` y añade utilidades para strings, memoria, escritura en file descriptor y manejo de listas enlazadas.
 
-## Itinerario recomendado
+Su objetivo es disponer de una base reutilizable para los siguientes proyectos del cursus, con codigo propio, legible y compatible con la norma de 42.
 
-1. Preparación del entorno.
-- Ejecuta `make` y `make bonus` para validar compilacion base.
-- Trabaja siempre con `-Wall -Wextra -Werror` y sin variables globales.
+## Instrucciones
+Compilacion de la libreria:
 
-2. Parte 1 libc (sin malloc)
-- Caracteres: `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_toupper`, `ft_tolower`.
-- Memoria: `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`.
-- Strings: `ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`.
-- Numerico: `ft_atoi`.
+```bash
+make
+```
 
-3. Parte 1 libc (con malloc)
-- `ft_calloc`, `ft_strdup`.
+Limpieza de objetos:
 
-4. Parte 2 adicional
-- Empieza por las mas simples: `ft_substr`, `ft_strjoin`, `ft_strmapi`, `ft_striteri`, `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`.
-- Continúa con `ft_strtrim`, `ft_split`, `ft_itoa`, `ft_putnbr_fd`.
+```bash
+make clean
+```
 
-5. Intentar bonus
-- `ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`, `ft_lstlast`, `ft_lstadd_back`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter`, `ft_lstmap`.
+Limpieza completa (objetos + libreria):
 
-6. Cierre antes de defensa
-- Revisa norma en todos los archivos.
-- Verifica ausencia de fugas.
-- Haz pruebas manuales de casos borde: `NULL`, strings vacias, longitudes 0, solapamiento en `memmove`, `INT_MIN` en `itoa` y `putnbr_fd`.
+```bash
+make fclean
+```
 
-## Archivos base incluidos
+Recompilacion completa:
 
-- `Makefile` con reglas `all`, `clean`, `fclean`, `re`, `bonus`.
-- `libft.h` con todos los prototipos obligatorios.
-- Stubs de todas las funciones en archivos `.c` para que el proyecto compile desde el inicio.
+```bash
+make re
+```
 
-## Flujo sugerido por bloque
+La salida del proyecto es el archivo `libft.a` en la raiz del repositorio.
 
-1. Implementa 3 a 5 funciones.
-2. Compila con `make`.
-3. Ejecuta tus tests locales.
-4. Refactoriza solo si mantiene norma y claridad.
+## Descripcion detallada de la libreria
+La libreria incluye:
+
+1. Funciones de caracteres y conversion (`ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_toupper`, `ft_tolower`, `ft_atoi`).
+2. Funciones de memoria (`ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`, `ft_calloc`).
+3. Funciones de cadenas (`ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`, `ft_strdup`).
+4. Funciones adicionales (`ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split`, `ft_itoa`, `ft_strmapi`, `ft_striteri`).
+5. Salida a descriptor de archivo (`ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`).
+6. Listas enlazadas con `t_list` (`ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`, `ft_lstlast`, `ft_lstadd_back`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter`, `ft_lstmap`).
+
+## Recursos
+
+1. Manuales del sistema para funciones estandar de C.
+2. The Open Group Base Specifications para comportamiento de funciones POSIX.
+3. Documentacion de 42 sobre norma y criterios de evaluacion.
+
+Todo el codigo final se verifico con `make` y `norminette`.
+
