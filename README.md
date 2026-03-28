@@ -32,7 +32,7 @@ Biblioteca personal de funciones en C.
 ## Archivos base incluidos
 
 - `Makefile` con reglas `all`, `clean`, `fclean`, `re`, `bonus`.
-- `libft.h` con todos los prototipos obligatorios y bonus.
+- `libft.h` con todos los prototipos obligatorios.
 - Stubs de todas las funciones en archivos `.c` para que el proyecto compile desde el inicio.
 
 ## Flujo sugerido por bloque
