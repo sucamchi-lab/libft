@@ -4,13 +4,13 @@ _Este proyecto ha sido creado como parte del currículo de 42 por scamlett._
 
 ## Descripcion
 
-`libft` es una libreria en C que reimplementa funciones base de `libc` y añade utilidades para strings, memoria, escritura en file descriptor (fd) y manejo de listas enlazadas.
+`libft` es una librería en C que reimplementa funciones base de `libc` y añade utilidades para strings, memoria, escritura en file descriptor (fd) y manejo de listas enlazadas.
 
-Su objetivo es disponer de una librería personal y reutilizable para los siguientes proyectos del cursus, con codigo propio, legible y compatible con la norma.
+Su objetivo es disponer de una librería personal y reutilizable para los siguientes proyectos del cursus, con código propio, legible y compatible con la norma.
 
 ## Instrucciones
 
-Compilacion de la libreria:
+Compilación de la libreria:
 
 ```bash
 make
@@ -22,25 +22,25 @@ Limpieza de objetos:
 make clean
 ```
 
-Limpieza completa (objetos + libreria):
+Limpieza completa (objetos + librería):
 
 ```bash
 make fclean
 ```
 
-Recompilacion completa:
+Recompilación completa:
 
 ```bash
 make re
 ```
 
-La salida del proyecto es el archivo `libft.a` en la raiz del repositorio.
+La salida del proyecto es el archivo `libft.a` en la raíz del repositorio.
 
-## Descripcion detallada de la libreria
+## Descripción detallada de la librería
 
-La libreria incluye:
+La librería incluye:
 
-1. Funciones de caracteres y conversion (`ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_toupper`, `ft_tolower`, `ft_atoi`).
+1. Funciones de caracteres y conversión (`ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_toupper`, `ft_tolower`, `ft_atoi`).
 2. Funciones de memoria (`ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`, `ft_calloc`).
 3. Funciones de strings (`ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`, `ft_strdup`).
 4. Funciones adicionales (`ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split`, `ft_itoa`, `ft_strmapi`, `ft_striteri`).
@@ -49,13 +49,12 @@ La libreria incluye:
 
 ## Recursos
 
-1. Manuales del sistema para funciones estandar de C. (glibc)
-2. The Open Group Base Specifications para funciones POSIX. (BSD libc)
-3. Documentacion de 42 sobre norma y criterios de evaluacion (es.subject_libft.pdf)
-4. https://man7.org/linux/man-pages/index.html (manual online de Linux)
-5. Se ha hecho un uso limitado y responsable de la IA para editar este README.md, refactorizar líneas de código en acorde con la norma y DRY (Don't Repeat Yourself) y para aclarar dudas relacionadas con la implementación y funcionalidad de los archivos .c
+1. Manuales del sistema para funciones estandar de C (glibc).
+2. Documentación de 42 sobre norma y criterios de evaluacion (es.subject_libft.pdf).
+3. https://man7.org/linux/man-pages/index.html (manual online de Linux)
+4. Se ha hecho un uso limitado y responsable de la IA para editar este README.md, refactorizar líneas de código en acorde con la norma y DRY (Don't Repeat Yourself) y para aclarar dudas relacionadas con la implementación y funcionalidad de los archivos .c
 
-Todo el codigo final se verifico con `make` y `norminette`.
+Todo el código final se verificó con `make` y `norminette`.
 
 # 📚 Documentación Completa de Libft
 
