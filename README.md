@@ -1,12 +1,12 @@
-_Este proyecto ha sido creado como parte del curriculo de 42 por scamlett._
+_Este proyecto ha sido creado como parte del currículo de 42 por scamlett._
 
 # libft
 
 ## Descripcion
 
-`libft` es una libreria en C que reimplementa funciones base de `libc` y añade utilidades para strings, memoria, escritura en file descriptor y manejo de listas enlazadas.
+`libft` es una libreria en C que reimplementa funciones base de `libc` y añade utilidades para strings, memoria, escritura en file descriptor (fd) y manejo de listas enlazadas.
 
-Su objetivo es disponer de una base reutilizable para los siguientes proyectos del cursus, con codigo propio, legible y compatible con la norma de 42.
+Su objetivo es disponer de una librería personal y reutilizable para los siguientes proyectos del cursus, con codigo propio, legible y compatible con la norma.
 
 ## Instrucciones
 
@@ -42,26 +42,22 @@ La libreria incluye:
 
 1. Funciones de caracteres y conversion (`ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_toupper`, `ft_tolower`, `ft_atoi`).
 2. Funciones de memoria (`ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`, `ft_calloc`).
-3. Funciones de cadenas (`ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`, `ft_strdup`).
+3. Funciones de strings (`ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`, `ft_strdup`).
 4. Funciones adicionales (`ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split`, `ft_itoa`, `ft_strmapi`, `ft_striteri`).
 5. Salida a descriptor de archivo (`ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`).
-6. Listas enlazadas con `t_list` (`ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`, `ft_lstlast`, `ft_lstadd_back`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter`, `ft_lstmap`).
+6. Listas enlazadas (`ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`, `ft_lstlast`, `ft_lstadd_back`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter`, `ft_lstmap`).
 
 ## Recursos
 
-1. Manuales del sistema para funciones estandar de C.
-2. The Open Group Base Specifications para comportamiento de funciones POSIX.
-3. Documentacion de 42 sobre norma y criterios de evaluacion.
+1. Manuales del sistema para funciones estandar de C. (glibc)
+2. The Open Group Base Specifications para funciones POSIX. (BSD libc)
+3. Documentacion de 42 sobre norma y criterios de evaluacion (es.subject_libft.pdf)
+4. https://man7.org/linux/man-pages/index.html (manual online de Linux)
+5. Se ha hecho un uso limitado y responsable de la IA para editar este README.md, refactorizar líneas de código en acorde con la norma y DRY (Don't Repeat Yourself) y para aclarar dudas relacionadas con la implementación y funcionalidad de los archivos .c
 
 Todo el codigo final se verifico con `make` y `norminette`.
 
 # 📚 Documentación Completa de Libft
-
-**Autor:** scamlett  
-**Proyecto:** Libft - Biblioteca de funciones estándar de C reimplementada  
-**Escuela:** 42 Málaga
-
----
 
 ## 📖 Índice de Contenidos
 
@@ -80,7 +76,7 @@ Todo el codigo final se verifico con `make` y `norminette`.
 
 ## Introducción
 
-Esta biblioteca contiene **43 funciones** organizadas en 9 categorías principales. Es una reimplementación de funciones estándar de C más algunas funciones adicionales útiles para proyectos de 42 School.
+Esta biblioteca contiene **43 funciones** que reimplementan funciones estándar de C más algunas funciones adicionales útiles para proyectos futuros de 42.
 
 ## 1. Funciones de Clasificación de Caracteres
 
@@ -108,7 +104,7 @@ int ft_isalpha(int c)
 - O si está en el rango de 'a' a 'z' (97-122)
 - Devuelve 1 (verdadero) si es una letra, 0 en caso contrario
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 - `ft_isalpha('A')` → devuelve 1
 - `ft_isalpha('5')` → devuelve 0
@@ -136,7 +132,7 @@ int ft_isdigit(int c)
 - Comprueba si `c` está entre '0' (ASCII 48) y '9' (ASCII 57)
 - Devuelve 1 si es un dígito, 0 si no lo es
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 - `ft_isdigit('7')` → devuelve 1
 - `ft_isdigit('a')` → devuelve 0
@@ -163,9 +159,8 @@ int ft_isalnum(int c)
 
 - Utiliza las funciones `ft_isalpha` y `ft_isdigit` ya definidas
 - Si el carácter pasa cualquiera de las dos pruebas, devuelve 1
-- Es una combinación lógica (OR) de ambas funciones
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 - `ft_isalnum('B')` → devuelve 1 (es letra)
 - `ft_isalnum('3')` → devuelve 1 (es número)
@@ -193,9 +188,8 @@ int ft_isascii(int c)
 
 - El rango ASCII estándar incluye valores de 0 a 127
 - Devuelve 1 si el valor está en este rango
-- Importante para validar entrada de datos
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 - `ft_isascii(65)` → devuelve 1 (es 'A')
 - `ft_isascii(200)` → devuelve 0 (fuera de rango ASCII)
@@ -224,7 +218,7 @@ int ft_isprint(int c)
 - Excluye caracteres de control (como '\n', '\t', etc.)
 - Devuelve 1 si es imprimible, 0 si no lo es
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 - `ft_isprint('A')` → devuelve 1
 - `ft_isprint('\n')` → devuelve 0 (carácter de control)
@@ -255,7 +249,7 @@ int ft_toupper(int c)
 - Si `c` es minúscula ('a' a 'z'), resta 32 para obtener la mayúscula
 - Si no es minúscula, devuelve el carácter sin cambios
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 - `ft_toupper('a')` → devuelve 'A' (65)
 - `ft_toupper('Z')` → devuelve 'Z' (sin cambio)
@@ -280,11 +274,10 @@ int ft_tolower(int c)
 }
 ```
 
-- Proceso inverso a `ft_toupper`
 - Si `c` es mayúscula ('A' a 'Z'), suma 32 para obtener la minúscula
 - Si no es mayúscula, devuelve el carácter sin cambios
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 - `ft_tolower('A')` → devuelve 'a' (97)
 - `ft_tolower('z')` → devuelve 'z' (sin cambio)
@@ -320,7 +313,7 @@ size_t ft_strlen(const char *str)
 - Recorre la cadena incrementando `i` hasta encontrar el carácter nulo '\0'
 - Devuelve el número de caracteres contados
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 - `ft_strlen("Hola")` → devuelve 4
 - `ft_strlen("")` → devuelve 0
@@ -357,7 +350,7 @@ char *ft_strchr(const char *s, int c)
 - Importante: también verifica el '\0' final (permite buscar el nulo)
 - Si no encuentra el carácter, devuelve NULL
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 - `ft_strchr("Hola", 'l')` → devuelve puntero a "la"
 - `ft_strchr("Hola", 'x')` → devuelve NULL
@@ -395,7 +388,7 @@ char *ft_strrchr(const char *s, int c)
 - Devuelve puntero a la última aparición encontrada
 - Si no lo encuentra, devuelve NULL
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 - `ft_strrchr("Hola mundo", 'o')` → devuelve puntero a "odo" (última 'o')
 
@@ -415,24 +408,23 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
     size_t i;
 
+    if (n == 0)
+        return (0);
     i = 0;
-    while (i < n && (s1[i] || s2[i]))
+    while (i < n - 1 && s1[i] && s2[i] && s1[i] == s2[i])
     {
-        if (s1[i] != s2[i])
-            return ((unsigned char)s1[i] - (unsigned char)s2[i]);
         i++;
     }
-    return (0);
+    return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 ```
 
-- Recorre ambas cadenas simultáneamente hasta `n` posiciones
-- Compara carácter por carácter
-- Si encuentra diferencia, devuelve la resta de los caracteres (como unsigned char)
-- Si son iguales hasta `n` caracteres, devuelve 0
+- Si `n` es 0, devuelve 0 directamente
+- Recorre ambas cadenas mientras sean iguales y queden posiciones por comparar
+- Cuando encuentra diferencia (o final de alguna cadena), devuelve la resta de los bytes como `unsigned char`
 - El casting a unsigned char es importante para comparaciones correctas
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 - `ft_strncmp("Hola", "Hola", 4)` → devuelve 0 (iguales)
 - `ft_strncmp("abc", "abd", 3)` → devuelve valor negativo ('c' < 'd')
@@ -478,7 +470,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 - Respeta el límite `len` en ambos bucles
 - Devuelve puntero al inicio de la coincidencia o NULL
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 - `ft_strnstr("Hola mundo", "mundo", 20)` → devuelve puntero a "mundo"
 - `ft_strnstr("Hola mundo", "mundo", 4)` → devuelve NULL (límite muy corto)
@@ -518,7 +510,7 @@ void *ft_memchr(const void *s, int c, size_t n)
 - Devuelve puntero al primer byte que coincide
 - Si no encuentra coincidencia en `n` bytes, devuelve NULL
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 - `ft_memchr("Hola", 'l', 4)` → devuelve puntero a "la"
 
@@ -568,7 +560,7 @@ char *ft_strdup(const char *s1)
 
 **Importante:** El usuario debe liberar la memoria con `free()` cuando termine de usar la cadena.
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 char *copia = ft_strdup("Hola");
@@ -614,7 +606,7 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 - **Importante:** Devuelve la longitud de `src`, NO los bytes copiados
 - Esto permite detectar si hubo truncamiento (si retorno >= dstsize)
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 char buffer[10];
@@ -637,32 +629,39 @@ Concatena una cadena al final de otra con límite de tamaño de buffer.
 ```c
 size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-    size_t dst_len;
-    size_t src_len;
     size_t i;
+    size_t dlen;
+    size_t slen;
 
-    dst_len = ft_strlen(dst);
-    src_len = ft_strlen(src);
-    if (dstsize <= dst_len)
-        return (dstsize + src_len);
-    i = 0;
-    while (src[i] && (dst_len + i) < (dstsize - 1))
+    dlen = 0;
+    slen = ft_strlen(src);
+    while (dst[dlen] && dlen < dstsize)
     {
-        dst[dst_len + i] = src[i];
+        dlen++;
+    }
+    if (dlen == dstsize)
+    {
+        return (dstsize + slen);
+    }
+    i = 0;
+    while (src[i] && (dlen + i + 1) < dstsize)
+    {
+        dst[dlen + i] = src[i];
         i++;
     }
-    dst[dst_len + i] = '\0';
-    return (dst_len + src_len);
+    dst[dlen + i] = '\0';
+    return (dlen + slen);
 }
 ```
 
-- Encuentra el final de `dst` con `ft_strlen`
-- Si el buffer ya está lleno (`dstsize <= dst_len`), devuelve `dstsize + src_len`
+- Calcula `slen` con `ft_strlen(src)`
+- Busca el final de `dst` sin leer fuera del límite `dstsize`
+- Si no encuentra terminador en ese límite, devuelve `dstsize + slen`
 - Añade caracteres de `src` al final de `dst` hasta llenar el buffer
 - Siempre termina con '\0'
-- Devuelve la longitud total que habría tenido (`dst_len + src_len`)
+- Devuelve la longitud total que habría tenido (`dlen + slen`)
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 char buffer[20] = "Hola ";
@@ -716,7 +715,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 - Copia `len` caracteres desde la posición `start`
 - Añade terminador nulo y devuelve la nueva subcadena
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 char *sub = ft_substr("Hola mundo", 5, 5);
@@ -762,7 +761,7 @@ char *ft_strjoin(char const *s1, char const *s2)
 - Usa `ft_strlcat` para añadir `s2` al final
 - Devuelve la nueva cadena concatenada
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 char *resultado = ft_strjoin("Hola ", "mundo");
@@ -815,7 +814,7 @@ char *ft_strtrim(char const *s1, char const *set)
 - Encuentra el índice `end` retrocediendo desde el final mientras los caracteres estén en `set`
 - Usa `ft_substr` para extraer la parte central (sin los caracteres del set)
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 char *trimmed = ft_strtrim("   Hola   ", " ");
@@ -969,7 +968,7 @@ char **ft_split(char const *s, char c)
 - Llena el array con `ft_fill_split`
 - Devuelve el array o NULL si hubo error
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 char **palabras = ft_split("Hola mundo cruel", ' ');
@@ -1021,7 +1020,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 - La función `f` puede transformar el carácter según su posición
 - Devuelve la nueva cadena transformada
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 char mi_funcion(unsigned int i, char c)
@@ -1051,28 +1050,25 @@ Rellena un bloque de memoria con un valor específico.
 **¿Cómo funciona el código?**
 
 ```c
-void *ft_memset(void *b, int c, size_t len)
+void *ft_memset(void *s, int c, size_t n)
 {
-    size_t        i;
-    unsigned char *str;
+    size_t i;
 
     i = 0;
-    str = (unsigned char *)b;
-    while (i < len)
+    while (i < n)
     {
-        str[i] = (unsigned char)c;
+        ((unsigned char *)s)[i] = (unsigned char)c;
         i++;
     }
-    return (b);
+    return (s);
 }
 ```
 
-- Convierte el puntero `b` a `unsigned char*` para trabajar byte a byte
-- Recorre `len` bytes
+- Recorre `n` bytes del bloque apuntado por `s`
 - Asigna el valor `c` (convertido a unsigned char) a cada byte
-- Devuelve el puntero original `b`
+- Devuelve el puntero original `s`
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 char buffer[10];
@@ -1102,7 +1098,7 @@ void ft_bzero(void *s, size_t n)
 - Es una función wrapper para conveniencia
 - Útil para limpiar/inicializar buffers
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 char buffer[10] = "Hola";
@@ -1148,7 +1144,7 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 - **Importante:** No maneja solapamiento correctamente (usar `ft_memmove` para eso)
 - Devuelve el puntero `dest`
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 char src[] = "Hola";
@@ -1257,7 +1253,7 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 - Si encuentra diferencia, devuelve la resta (positivo, negativo o cero)
 - Si todos los `n` bytes son iguales, devuelve 0
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 char a[] = "Hola";
@@ -1301,7 +1297,7 @@ void *ft_calloc(size_t count, size_t size)
 - Inicializa todo a cero con `ft_bzero`
 - **Importante para seguridad**: La verificación de overflow previene vulnerabilidades
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 int *array = (int *)ft_calloc(10, sizeof(int));
@@ -1356,7 +1352,7 @@ int ft_atoi(const char *str)
   - Suma el nuevo dígito (convierte char a int restando '0')
 - **Paso 4**: Aplica el signo y devuelve el resultado
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 - `ft_atoi("  -123")` → devuelve -123
 - `ft_atoi("42abc")` → devuelve 42 (se detiene en 'a')
@@ -1454,7 +1450,7 @@ char *ft_itoa(int n)
 - Si es negativo, pone '-' al inicio y trabaja con valor positivo
 - Llena los dígitos con `ft_fill_num`
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 char *num = ft_itoa(-12345);
@@ -1496,7 +1492,7 @@ void ft_striteri(char *s, void (*f)(unsigned int, char *))
 - Llama a la función `f` pasando el índice y un puntero al carácter
 - La función `f` puede modificar el carácter directamente (recibe puntero)
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 void mi_funcion(unsigned int i, char *c)
@@ -1546,7 +1542,7 @@ void ft_putchar_fd(char c, int fd)
 - `&c`: dirección del carácter a escribir
 - `1`: número de bytes a escribir
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 ft_putchar_fd('A', 1);  // Escribe 'A' en stdout (pantalla)
@@ -1582,7 +1578,7 @@ void ft_putstr_fd(char *s, int fd)
 - Escribe cada carácter usando `write()`
 - Alternativa más eficiente sería escribir toda la cadena de una vez
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 ft_putstr_fd("Hola mundo", 1);  // Escribe "Hola mundo" en stdout
@@ -1613,7 +1609,7 @@ void ft_putendl_fd(char *s, int fd)
 - Llama a `ft_putstr_fd` para escribir la cadena
 - Luego llama a `ft_putchar_fd` para escribir '\n'
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 ft_putendl_fd("Hola mundo", 1);
@@ -1672,7 +1668,7 @@ ft_putnbr_fd(12345, 1)
   → escribe '5'
 ```
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 ft_putnbr_fd(-12345, 1);  // Escribe "-12345" en stdout
@@ -1721,7 +1717,7 @@ t_list *ft_lstnew(void *content)
 - Inicializa `next` a NULL (será el último nodo por ahora)
 - Devuelve el nuevo nodo
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 int *num = malloc(sizeof(int));
@@ -1765,7 +1761,7 @@ Antes:  lst → [A] → [B] → NULL
 Después: lst → [C] → [A] → [B] → NULL
 ```
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 t_list *lista = NULL;
@@ -1816,7 +1812,7 @@ Antes:  lst → [A] → [B] → NULL
 Después: lst → [A] → [B] → [C] → NULL
 ```
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 t_list *lista = ft_lstnew("Primero");
@@ -1852,7 +1848,7 @@ t_list *ft_lstlast(t_list *lst)
 - Se detiene cuando encuentra un nodo cuyo `next` es NULL
 - Devuelve ese último nodo
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 t_list *lista = /* lista con varios nodos */;
@@ -1891,7 +1887,7 @@ int ft_lstsize(t_list *lst)
 - Incrementa el contador por cada nodo
 - Devuelve el total
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 t_list *lista = /* lista: A → B → C → NULL */;
@@ -1925,7 +1921,7 @@ void ft_lstdelone(t_list *lst, void (*del)(void *))
 - Libera el nodo mismo con `free`
 - **Importante**: NO actualiza punteros de otros nodos
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 void delete_content(void *content)
@@ -1983,7 +1979,7 @@ Iteración 3: temp = NULL, elimina [C], lst = NULL
 Final: lst → NULL
 ```
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 t_list *lista = /* lista con varios nodos */;
@@ -2021,7 +2017,7 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
 - No modifica la estructura de la lista (punteros `next`)
 - La función `f` puede modificar el contenido o solo usarlo
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 void print_content(void *content)
@@ -2087,7 +2083,7 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
   4. Si todo va bien, añade el nuevo nodo a la nueva lista
 - Devuelve la nueva lista completa
 
-**Ejemplo de uso:**
+**Ejemplo:**
 
 ```c
 void *duplicate_string(void *content)
