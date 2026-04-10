@@ -4,9 +4,11 @@ _Este proyecto ha sido creado como parte del currículo de 42 por scamlett._
 
 ## Descripcion
 
-`libft` es una librería en C que reimplementa funciones base de `libc` y añade utilidades para strings, memoria, escritura en file descriptor (fd) y manejo de listas enlazadas.
+`libft` es una librería en C que reimplementa funciones base de `libc` y añade utilidades para strings, memoria, escritura en file descriptor (fd) y listas enlazadas.
 
 Su objetivo es disponer de una librería personal y reutilizable para los siguientes proyectos del cursus, con código propio, legible y compatible con la norma.
+
+He decidido redactar este README en español para poder explicar la funcionalidad del código y de cada función de la forma más clara y natural posible. Así, cualquier persona que necesite una explicación detallada podrá comprenderla fácilmente. Además, la comunicación habitual entre peers en 42 Málaga suele ser en español, lo que facilita el intercambio de información y la colaboración.
 
 ## Instrucciones
 
@@ -40,36 +42,28 @@ La salida del proyecto es el archivo `libft.a` en la raíz del repositorio.
 
 La librería incluye:
 
-1. Funciones de caracteres y conversión (`ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_toupper`, `ft_tolower`, `ft_atoi`).
-2. Funciones de memoria (`ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`, `ft_calloc`).
-3. Funciones de strings (`ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`, `ft_strdup`).
-4. Funciones adicionales (`ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split`, `ft_itoa`, `ft_strmapi`, `ft_striteri`).
-5. Salida a descriptor de archivo (`ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`).
-6. Listas enlazadas (`ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`, `ft_lstlast`, `ft_lstadd_back`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter`, `ft_lstmap`).
+1. Funciones de libc.
+2. Funciones adicionales.
+3. Listas enlazadas (bonus).
 
 ## Recursos
 
 1. Manuales del sistema para funciones estandar de C (glibc).
-2. Documentación de 42 sobre norma y criterios de evaluacion (es.subject_libft.pdf).
+2. PDF oficial de 42 con la norma y criterios de evaluacion del proyecto libft.
 3. https://man7.org/linux/man-pages/index.html (manual online de Linux)
 4. Se ha hecho un uso limitado y responsable de la IA para editar este README.md, refactorizar líneas de código en acorde con la norma y DRY (Don't Repeat Yourself) y para aclarar dudas relacionadas con la implementación y funcionalidad de los archivos .c
 
-Todo el código final se verificó con `make` y `norminette`.
+Todo el código final se ha verificado con `make` y `norminette`.
 
 # 📚 Documentación Completa de Libft
 
 ## 📖 Índice de Contenidos
 
 1. [Introducción](#introducción)
-2. [Funciones de Clasificación de Caracteres](#1-funciones-de-clasificación-de-caracteres)
-3. [Funciones de Conversión de Mayúsculas/Minúsculas](#2-funciones-de-conversión-de-mayúsculasminúsculas)
-4. [Funciones de Inspección de Cadenas](#3-funciones-de-inspección-de-cadenas)
-5. [Funciones de Manipulación de Cadenas](#4-funciones-de-manipulación-de-cadenas)
-6. [Funciones de Memoria](#5-funciones-de-memoria)
-7. [Funciones de Conversión](#6-funciones-de-conversión)
-8. [Funciones de Iteración de Cadenas](#7-funciones-de-iteración-de-cadenas)
-9. [Funciones de Salida](#8-funciones-de-salida)
-10. [Funciones de Listas Enlazadas](#9-funciones-de-listas-enlazadas)
+2. [Funciones de Libc ](#1-funciones-de-libc)
+3. [Funciones Adicionales](#2-funciones-adicionales)
+4. [Listas Enlazadas](#3-listas-enlazadas)
+5. [Conceptos Clave de Implementación](#conceptos-clave-de-implementación)
 
 ---
 
@@ -77,7 +71,59 @@ Todo el código final se verificó con `make` y `norminette`.
 
 Esta biblioteca contiene **43 funciones** que reimplementan funciones estándar de C más algunas funciones adicionales útiles para proyectos futuros de 42.
 
-## 1. Funciones de Clasificación de Caracteres
+## 1. Funciones de Libc
+
+1. `ft_isalpha.c`
+2. `ft_isdigit.c`
+3. `ft_isalnum.c`
+4. `ft_isascii.c`
+5. `ft_isprint.c`
+6. `ft_strlen.c`
+7. `ft_memset.c`
+8. `ft_bzero.c`
+9. `ft_memcpy.c`
+10. `ft_memmove.c`
+11. `ft_strlcpy.c`
+12. `ft_strlcat.c`
+13. `ft_toupper.c`
+14. `ft_tolower.c`
+15. `ft_strchr.c`
+16. `ft_strrchr.c`
+17. `ft_strncmp.c`
+18. `ft_memchr.c`
+19. `ft_memcmp.c`
+20. `ft_strnstr.c`
+21. `ft_atoi.c`
+22. `ft_calloc.c`
+23. `ft_strdup.c`
+
+## 2. Funciones Adicionales
+
+1. `ft_substr.c`
+2. `ft_strjoin.c`
+3. `ft_strtrim.c`
+4. `ft_split.c`
+5. `ft_itoa.c`
+6. `ft_strmapi.c`
+7. `ft_striteri.c`
+8. `ft_putchar_fd.c`
+9. `ft_putstr_fd.c`
+10. `ft_putendl_fd.c`
+11. `ft_putnbr_fd.c`
+
+## 3. Listas Enlazadas
+
+1. `ft_lstnew.c`
+2. `ft_lstadd_front.c`
+3. `ft_lstsize.c`
+4. `ft_lstlast.c`
+5. `ft_lstadd_back.c`
+6. `ft_lstdelone.c`
+7. `ft_lstclear.c`
+8. `ft_lstiter.c`
+9. `ft_lstmap.c`
+
+### A. Funciones de Clasificación de Caracteres
 
 Estas funciones verifican propiedades de caracteres examinando sus valores ASCII.
 
@@ -224,7 +270,7 @@ int ft_isprint(int c)
 
 ---
 
-## 2. Funciones de Conversión de Mayúsculas/Minúsculas
+### B. Funciones de Conversión de Mayúsculas/Minúsculas
 
 ### 🔹 `ft_toupper`
 
@@ -283,7 +329,7 @@ int ft_tolower(int c)
 
 ---
 
-## 3. Funciones de Inspección de Cadenas
+### C. Funciones de Inspección de Cadenas
 
 Estas funciones examinan o buscan dentro de cadenas sin modificarlas.
 
@@ -389,7 +435,7 @@ char *ft_strrchr(const char *s, int c)
 
 **Ejemplo:**
 
-- `ft_strrchr("Hola mundo", 'o')` → devuelve puntero a "odo" (última 'o')
+- `ft_strrchr("Hola mundo", 'o')` → devuelve puntero a la última 'o'.
 
 ---
 
@@ -440,21 +486,21 @@ Busca una subcadena dentro de otra cadena, limitando la búsqueda a `len` bytes.
 **¿Cómo funciona el código?**
 
 ```c
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char *ft_strnstr(const char *big, const char *little, size_t len)
 {
     size_t i;
     size_t j;
 
-    if (!*needle)
-        return ((char *)haystack);
+    if (!*little)
+        return ((char *)big);
     i = 0;
-    while (haystack[i] && i < len)
+    while (big[i] && i < len)
     {
         j = 0;
-        while (haystack[i + j] == needle[j] && (i + j) < len)
+        while (big[i + j] == little[j] && (i + j) < len)
         {
-            if (!needle[j + 1])
-                return ((char *)&haystack[i]);
+            if (!little[j + 1])
+                return ((char *)&big[i]);
             j++;
         }
         i++;
@@ -463,9 +509,9 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 }
 ```
 
-- Si `needle` está vacía, devuelve `haystack` inmediatamente
-- Usa dos bucles: uno externo recorre `haystack`, uno interno verifica coincidencias
-- Para cada posición en `haystack`, intenta hacer coincidir toda la `needle`
+- Si `little` está vacía, devuelve `big` inmediatamente
+- Usa dos bucles: uno externo recorre `big`, uno interno verifica coincidencias
+- Para cada posición en `big`, intenta hacer coincidir toda la `little`
 - Respeta el límite `len` en ambos bucles
 - Devuelve puntero al inicio de la coincidencia o NULL
 
@@ -515,7 +561,7 @@ void *ft_memchr(const void *s, int c, size_t n)
 
 ---
 
-## 4. Funciones de Manipulación de Cadenas
+### D. Funciones de Manipulación de Cadenas
 
 Estas funciones crean nuevas cadenas o modifican las existentes.
 
@@ -579,16 +625,16 @@ Copia una cadena a un buffer con un tamaño máximo, garantizando terminación n
 **¿Cómo funciona el código?**
 
 ```c
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
     size_t i;
     size_t src_len;
 
     src_len = ft_strlen(src);
-    if (dstsize == 0)
+    if (size == 0)
         return (src_len);
     i = 0;
-    while (src[i] && i < (dstsize - 1))
+    while (src[i] && i < (size - 1))
     {
         dst[i] = src[i];
         i++;
@@ -599,11 +645,11 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 ```
 
 - Calcula primero la longitud total de `src`
-- Si `dstsize` es 0, no copia nada pero devuelve la longitud de `src`
-- Copia hasta `dstsize - 1` caracteres (deja espacio para '\0')
+- Si `size` es 0, no copia nada pero devuelve la longitud de `src`
+- Copia hasta `size - 1` caracteres (deja espacio para '\0')
 - Siempre añade el terminador nulo
 - **Importante:** Devuelve la longitud de `src`, NO los bytes copiados
-- Esto permite detectar si hubo truncamiento (si retorno >= dstsize)
+- Esto permite detectar si hubo truncamiento (si retorno >= size)
 
 **Ejemplo:**
 
@@ -626,7 +672,7 @@ Concatena una cadena al final de otra con límite de tamaño de buffer.
 **¿Cómo funciona el código?**
 
 ```c
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
     size_t i;
     size_t dlen;
@@ -634,16 +680,16 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 
     dlen = 0;
     slen = ft_strlen(src);
-    while (dst[dlen] && dlen < dstsize)
+    while (dst[dlen] && dlen < size)
     {
         dlen++;
     }
-    if (dlen == dstsize)
+    if (dlen == size)
     {
-        return (dstsize + slen);
+        return (size + slen);
     }
     i = 0;
-    while (src[i] && (dlen + i + 1) < dstsize)
+    while (src[i] && (dlen + i + 1) < size)
     {
         dst[dlen + i] = src[i];
         i++;
@@ -654,8 +700,8 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 ```
 
 - Calcula `slen` con `ft_strlen(src)`
-- Busca el final de `dst` sin leer fuera del límite `dstsize`
-- Si no encuentra terminador en ese límite, devuelve `dstsize + slen`
+- Busca el final de `dst` sin leer fuera del límite `size`
+- Si no encuentra terminador en ese límite, devuelve `size + slen`
 - Añade caracteres de `src` al final de `dst` hasta llenar el buffer
 - Siempre termina con '\0'
 - Devuelve la longitud total que habría tenido (`dlen + slen`)
@@ -1035,7 +1081,7 @@ free(resultado);
 
 ---
 
-## 5. Funciones de Memoria
+### E. Funciones de Memoria
 
 Estas funciones operan sobre bloques de memoria raw (bytes).
 
@@ -1306,7 +1352,7 @@ free(array);
 
 ---
 
-## 6. Funciones de Conversión
+### F. Funciones de Conversión
 
 ### 🔹 `ft_atoi`
 
@@ -1459,7 +1505,7 @@ free(num);
 
 ---
 
-## 7. Funciones de Iteración de Cadenas
+### G. Funciones de Iteración de Cadenas
 
 ### 🔹 `ft_striteri`
 
@@ -1516,7 +1562,7 @@ Diferencia con `ft_striteri`:
 
 ---
 
-## 8. Funciones de Salida
+### H. Funciones de Salida
 
 Estas funciones escriben en descriptores de archivo usando la llamada al sistema `write()`.
 
@@ -1675,7 +1721,7 @@ ft_putnbr_fd(-12345, 1);  // Escribe "-12345" en stdout
 
 ---
 
-## 9. Funciones de Listas Enlazadas
+### I. Funciones de Listas Enlazadas
 
 Todas estas funciones trabajan con la estructura `t_list`:
 
@@ -2100,26 +2146,7 @@ t_list *copia = ft_lstmap(original, duplicate_string, delete_string);
 // copia es una nueva lista con copias de los strings
 ```
 
----
-
-## 📊 Resumen de Categorías
-
-| Categoría                   | Cantidad | Funciones                                                                                 |
-| --------------------------- | -------- | ----------------------------------------------------------------------------------------- |
-| Clasificación de caracteres | 5        | isalpha, isdigit, isalnum, isascii, isprint                                               |
-| Conversión de caso          | 2        | toupper, tolower                                                                          |
-| Inspección de cadenas       | 6        | strlen, strchr, strrchr, strncmp, strnstr, memchr                                         |
-| Manipulación de cadenas     | 8        | strdup, strlcpy, strlcat, strjoin, substr, strtrim, split, strmapi                        |
-| Funciones de memoria        | 7        | memset, bzero, memcpy, memmove, memcmp, calloc, (memchr)                                  |
-| Conversión                  | 2        | atoi, itoa                                                                                |
-| Iteración                   | 2        | striteri, strmapi                                                                         |
-| Salida                      | 4        | putchar_fd, putstr_fd, putendl_fd, putnbr_fd                                              |
-| Listas enlazadas            | 9        | lstnew, lstadd_front, lstadd_back, lstlast, lstsize, lstdelone, lstclear, lstiter, lstmap |
-| **TOTAL**                   | **45**   | (memchr y strmapi aparecen en dos categorías)                                             |
-
----
-
-## 🔑 Conceptos Clave de Implementación
+## Conceptos Clave de Implementación
 
 ### 1. **Protección contra NULL**
 
@@ -2127,7 +2154,7 @@ Casi todas las funciones verifican punteros NULL antes de usarlos para evitar se
 
 ### 2. **Manejo de INT_MIN**
 
-Las funciones `ft_itoa` y `ft_putnbr_fd` convierten a `long` porque INT_MIN (-2147483648) no puede negarse en int sin overflow.
+Las funciones `ft_itoa` y `ft_putnbr_fd` convierten a `long` para evitar int overflow.
 
 ### 3. **Protección contra overflow**
 
