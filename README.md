@@ -38,14 +38,6 @@ make re
 
 La salida del proyecto es el archivo `libft.a` en la raíz del repositorio.
 
-## Descripción detallada de la librería
-
-La librería incluye:
-
-1. Funciones de libc.
-2. Funciones adicionales.
-3. Listas enlazadas (bonus).
-
 ## Recursos
 
 1. Manuales del sistema para funciones estandar de C (glibc).
