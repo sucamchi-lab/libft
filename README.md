@@ -55,13 +55,13 @@ Todo el código final se ha verificado con `make` y `norminette`.
 2. [Funciones de Libc ](#1-funciones-de-libc)
 3. [Funciones Adicionales](#2-funciones-adicionales)
 4. [Listas Enlazadas](#3-listas-enlazadas)
-5. [Conceptos Clave de Implementación](#conceptos-clave-de-implementación)
+5. [Conceptos Clave](#conceptos-clave)
 
 ---
 
 ## Introducción
 
-Esta biblioteca contiene **43 funciones** que reimplementan funciones estándar de C más algunas funciones adicionales útiles para proyectos futuros de 42.
+Esta biblioteca contiene **43 funciones** en total, algunas de cuáles reimplementan funciones estándar de C, más algunas funciones adicionales útiles para proyectos futuros.
 
 ## 1. Funciones de Libc
 
@@ -408,7 +408,7 @@ char *ft_strrchr(const char *s, int c)
 {
     int i;
 
-    i = ft_strlen(s);
+    i = (int)ft_strlen(s);
     while (i >= 0)
     {
         if (s[i] == (char)c)
@@ -483,18 +483,18 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
     size_t i;
     size_t j;
 
-    if (!*little)
+    if (little[0] == '\0')
         return ((char *)big);
     i = 0;
     while (big[i] && i < len)
     {
         j = 0;
-        while (big[i + j] == little[j] && (i + j) < len)
+        while (big[i + j] && little[j] && (i + j) < len && big[i + j] == little[j])
         {
-            if (!little[j + 1])
-                return ((char *)&big[i]);
             j++;
         }
+        if (little[j] == '\0')
+            return ((char *)&big[i]);
         i++;
     }
     return (NULL);
@@ -526,15 +526,15 @@ Busca un byte específico en un bloque de memoria.
 ```c
 void *ft_memchr(const void *s, int c, size_t n)
 {
-    size_t         i;
-    unsigned char  *str;
+    size_t                  i;
+    const unsigned char     *str;
 
-    str = (unsigned char *)s;
     i = 0;
+    str = (const unsigned char *)s;
     while (i < n)
     {
         if (str[i] == (unsigned char)c)
-            return ((void *)&str[i]);
+            return ((void *)(str + i));
         i++;
     }
     return (NULL);
@@ -620,19 +620,18 @@ Copia una cadena a un buffer con un tamaño máximo, garantizando terminación n
 size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
     size_t i;
-    size_t src_len;
 
-    src_len = ft_strlen(src);
-    if (size == 0)
-        return (src_len);
-    i = 0;
-    while (src[i] && i < (size - 1))
+    if (size != 0)
     {
-        dst[i] = src[i];
-        i++;
+        i = 0;
+        while (src[i] && i < (size - 1))
+        {
+            dst[i] = src[i];
+            i++;
+        }
+        dst[i] = '\0';
     }
-    dst[i] = '\0';
-    return (src_len);
+    return (ft_strlen(src));
 }
 ```
 
@@ -718,30 +717,36 @@ Extrae una subcadena desde una posición específica con una longitud determinad
 **¿Cómo funciona el código?**
 
 ```c
+static size_t ft_sub_len(size_t slen, unsigned int start, size_t len)
+{
+    if ((size_t)start >= slen)
+        return (0);
+    if (len > slen - start)
+        return (slen - start);
+    return (len);
+}
+
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-    char   *substr;
-    size_t s_len;
+    char   *str;
     size_t i;
 
     if (!s)
         return (NULL);
-    s_len = ft_strlen(s);
-    if (start >= s_len)
+    len = ft_sub_len(ft_strlen(s), start, len);
+    if (len == 0)
         return (ft_strdup(""));
-    if (len > s_len - start)
-        len = s_len - start;
-    substr = (char *)malloc((len + 1) * sizeof(char));
-    if (!substr)
+    str = (char *)malloc((len + 1) * sizeof(char));
+    if (!str)
         return (NULL);
     i = 0;
     while (i < len)
     {
-        substr[i] = s[start + i];
+        str[i] = s[start + i];
         i++;
     }
-    substr[i] = '\0';
-    return (substr);
+    str[i] = '\0';
+    return (str);
 }
 ```
 
@@ -774,20 +779,18 @@ Concatena dos cadenas en una nueva cadena reservada en memoria dinámica.
 ```c
 char *ft_strjoin(char const *s1, char const *s2)
 {
-    char   *joined;
-    size_t len1;
-    size_t len2;
+    char   *str;
+    size_t len;
 
     if (!s1 || !s2)
         return (NULL);
-    len1 = ft_strlen(s1);
-    len2 = ft_strlen(s2);
-    joined = (char *)malloc((len1 + len2 + 1) * sizeof(char));
-    if (!joined)
+    len = ft_strlen(s1) + ft_strlen(s2) + 1;
+    str = (char *)malloc(len * sizeof(char));
+    if (!str)
         return (NULL);
-    ft_strlcpy(joined, s1, len1 + 1);
-    ft_strlcat(joined, s2, len1 + len2 + 1);
-    return (joined);
+    ft_strlcpy(str, s1, len);
+    ft_strlcat(str, s2, len);
+    return (str);
 }
 ```
 
@@ -1030,24 +1033,22 @@ Crea una nueva cadena aplicando una función a cada carácter de la cadena origi
 ```c
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    char   *result;
-    size_t i;
-    size_t len;
+    char           *str;
+    unsigned int   i;
 
     if (!s || !f)
         return (NULL);
-    len = ft_strlen(s);
-    result = (char *)malloc((len + 1) * sizeof(char));
-    if (!result)
+    str = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+    if (!str)
         return (NULL);
     i = 0;
-    while (i < len)
+    while (s[i])
     {
-        result[i] = f(i, s[i]);
+        str[i] = f(i, s[i]);
         i++;
     }
-    result[i] = '\0';
-    return (result);
+    str[i] = '\0';
+    return (str);
 }
 ```
 
@@ -1159,12 +1160,12 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 {
     size_t       i;
     unsigned char *d;
-    unsigned char *s;
+    const unsigned char *s;
 
     if (!dest && !src)
         return (NULL);
     d = (unsigned char *)dest;
-    s = (unsigned char *)src;
+    s = (const unsigned char *)src;
     i = 0;
     while (i < n)
     {
@@ -1676,10 +1677,8 @@ void ft_putnbr_fd(int n, int fd)
         nb = -nb;
     }
     if (nb >= 10)
-    {
-        ft_putnbr_fd(nb / 10, fd);
-    }
-    ft_putchar_fd((nb % 10) + '0', fd);
+        ft_putnbr_fd((int)(nb / 10), fd);
+    ft_putchar_fd((char)(nb % 10 + '0'), fd);
 }
 ```
 
@@ -1737,14 +1736,14 @@ Crea un nuevo nodo de lista.
 ```c
 t_list *ft_lstnew(void *content)
 {
-    t_list *new;
+    t_list *new_node;
 
-    new = (t_list *)malloc(sizeof(t_list));
-    if (!new)
+    new_node = (t_list *)malloc(sizeof(t_list));
+    if (!new_node)
         return (NULL);
-    new->content = content;
-    new->next = NULL;
-    return (new);
+    new_node->content = content;
+    new_node->next = NULL;
+    return (new_node);
 }
 ```
 
@@ -2138,7 +2137,7 @@ t_list *copia = ft_lstmap(original, duplicate_string, delete_string);
 // copia es una nueva lista con copias de los strings
 ```
 
-## Conceptos Clave de Implementación
+## Conceptos Clave
 
 ### 1. **Protección contra NULL**
 
@@ -2158,11 +2157,11 @@ Las funciones `ft_itoa` y `ft_putnbr_fd` convierten a `long` para evitar int ove
 
 ### 5. **Terminación NULL**
 
-Las funciones de cadenas siempre añaden '\0' al final para mantener la invariante de C strings.
+Las funciones de cadenas siempre añaden '\0' al final asegurar la integridad de C strings.
 
 ### 6. **Gestión de memoria**
 
-Funciones que usan `malloc` devuelven NULL en caso de fallo y tienen mecanismos de limpieza (como `ft_free_split`).
+Funciones que usan `malloc` devuelven NULL en caso de fallo y tienen mecanismos de limpieza.
 
 ### 7. **Casting a unsigned char**
 
