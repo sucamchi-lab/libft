@@ -2,7 +2,7 @@ _Este proyecto ha sido creado como parte del currículo de 42 por scamlett._
 
 # libft
 
-## Descripcion
+## Descripción
 
 `libft` es una librería en C que reimplementa funciones base de `libc` y añade utilidades para strings, memoria, escritura en file descriptor (fd) y listas enlazadas.
 
@@ -68,7 +68,7 @@ Este Makefile está compuesto así:
 1. Manuales del sistema para funciones estandar de C (glibc).
 2. PDF oficial de 42 con la norma y criterios de evaluacion del proyecto libft.
 3. https://man7.org/linux/man-pages/index.html (manual online de Linux)
-4. Se ha hecho un uso limitado y responsable de la IA para formatear este README.md, refactorizar líneas de código en acorde con la norma y [DRY (Don't Repeat Yourself)](https://www.arsys.es/blog/dont-repeat-yourself-en-programacion) y para aclarar dudas relacionadas con la implementación y funcionalidad de los archivos .c y asegurarme que he entendido el código.
+4. Se ha hecho un uso limitado y responsable de la IA para formatear este README.md, refactorizar líneas de código en acorde con la norma y [DRY (Don't Repeat Yourself)](https://www.arsys.es/blog/dont-repeat-yourself-en-programacion), y para aclarar dudas relacionadas con la implementación y funcionalidad de los archivos .c y asegurarme que he entendido el código.
 
 Todo el código final se ha verificado con `make` y `norminette`.
 
@@ -2166,7 +2166,7 @@ t_list *copia = ft_lstmap(original, duplicate_string, delete_string);
 
 ### 1. **Protección contra NULL**
 
-Casi todas las funciones verifican punteros NULL antes de usarlos para evitar segmentation faults.
+Casi todas las funciones verifican punteros NULL antes de usarlos para evitar segfault.
 
 ### 2. **Manejo de INT_MIN**
 
@@ -2182,7 +2182,7 @@ Las funciones `ft_itoa` y `ft_putnbr_fd` convierten a `long` para evitar int ove
 
 ### 5. **Terminación NULL**
 
-Las funciones de cadenas siempre añaden '\0' al final asegurar la integridad de C strings.
+Las funciones de cadenas siempre añaden '\0' al final asegurar la integridad de strings.
 
 ### 6. **Gestión de memoria**
 
