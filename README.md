@@ -8,7 +8,7 @@ _Este proyecto ha sido creado como parte del currículo de 42 por scamlett._
 
 Su objetivo es disponer de una librería personal y reutilizable para los siguientes proyectos del cursus, con código propio, legible y compatible con la norma.
 
-He decidido redactar este README en español para poder explicar la funcionalidad del código y de cada función de la forma más clara y natural posible. Así, cualquier persona que necesite una explicación detallada podrá comprenderla fácilmente. Además, la comunicación habitual entre peers en 42 Málaga suele ser en español, lo que facilita el intercambio de información y la colaboración.
+He decidido redactar este README en español para poder explicar la funcionalidad del código y de cada función de la forma más clara y natural posible. Así, cualquier compañero o evaluador que necesite una explicación detallada podrá comprenderla fácilmente. Además, la comunicación habitual entre peers en 42 Málaga suele ser en español, lo que facilita el intercambio de información y la colaboración.
 
 ## Instrucciones
 
@@ -38,12 +38,37 @@ make re
 
 La salida del proyecto es el archivo `libft.a` en la raíz del repositorio.
 
+## Como crear un Makefile
+
+Para que un `Makefile` funcione correctamente necesitas:
+
+1. Un **objetivo principal** (en este caso `libft.a`).
+2. Variables con herramientas y flags (`CC`, `CFLAGS`, `AR`, `ARFLAGS`).
+3. La lista de fuentes (`SRCS`) y su transformación a objetos (`OBJS`).
+4. Reglas con dependencias claras (`all`, `clean`, `fclean`, `re`).
+
+Este Makefile está compuesto así:
+
+- `NAME = libft.a`: nombre de la librería final.
+- `CC = cc`: compilador de C.
+- `CFLAGS = -Wall -Wextra -Werror`: activa avisos y trata warnings como error.
+- `AR = ar` y `ARFLAGS = rcs`: herramienta y flags para crear la librería estática.
+- `SRCS = ...`: lista de todos los `.c` del proyecto.
+- `OBJS = $(SRCS:.c=.o)`: convierte automáticamente cada `.c` en `.o`.
+- `all: $(NAME)`: objetivo por defecto; al hacer `make`, construye `$(NAME)`.
+- `$(NAME): $(OBJS)`: define que la librería depende de todos los objetos.
+- `$(AR) $(ARFLAGS) $(NAME) $(OBJS)`: empaqueta los `.o` dentro de `libft.a`.
+- `clean:` + `rm -f $(OBJS)`: borra solo archivos objeto.
+- `fclean: clean` + `rm -f $(NAME)`: borra objetos y también la librería.
+- `re: fclean all`: reconstrucción completa desde cero.
+
+
 ## Recursos
 
 1. Manuales del sistema para funciones estandar de C (glibc).
 2. PDF oficial de 42 con la norma y criterios de evaluacion del proyecto libft.
 3. https://man7.org/linux/man-pages/index.html (manual online de Linux)
-4. Se ha hecho un uso limitado y responsable de la IA para editar este README.md, refactorizar líneas de código en acorde con la norma y DRY (Don't Repeat Yourself) y para aclarar dudas relacionadas con la implementación y funcionalidad de los archivos .c
+4. Se ha hecho un uso limitado y responsable de la IA para formatear este README.md, refactorizar líneas de código en acorde con la norma y [DRY (Don't Repeat Yourself)](https://www.arsys.es/blog/dont-repeat-yourself-en-programacion) y para aclarar dudas relacionadas con la implementación y funcionalidad de los archivos .c y asegurarme que he entendido el código.
 
 Todo el código final se ha verificado con `make` y `norminette`.
 
