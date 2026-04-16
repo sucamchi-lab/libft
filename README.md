@@ -72,9 +72,9 @@ Este Makefile está compuesto así:
 
 Todo el código final se ha verificado con `make` y `norminette`.
 
-# 📚 Documentación Completa de Libft
+# Documentación Completa de Libft
 
-## 📖 Índice de Contenidos
+## Índice de Contenidos
 
 1. [Introducción](#introducción)
 2. [Funciones de Libc ](#1-funciones-de-libc)
