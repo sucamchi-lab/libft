@@ -2168,30 +2168,17 @@ t_list *copia = ft_lstmap(original, duplicate_string, delete_string);
 
 Casi todas las funciones verifican punteros NULL antes de usarlos para evitar segfault.
 
-### 2. **Manejo de INT_MIN**
+### 2. **Manejo de INT_MIN y Protección contra overflow**
 
 Las funciones `ft_itoa` y `ft_putnbr_fd` convierten a `long` para evitar int overflow.
 
-### 3. **Protección contra overflow**
-
 `ft_calloc` verifica que `count * size` no desborde antes de hacer malloc.
 
-### 4. **Solapamiento de memoria**
-
-`ft_memmove` maneja correctamente el solapamiento copiando en dirección adecuada.
-
-### 5. **Terminación NULL**
-
-Las funciones de cadenas siempre añaden '\0' al final asegurar la integridad de strings.
-
-### 6. **Gestión de memoria**
-
-Funciones que usan `malloc` devuelven NULL en caso de fallo y tienen mecanismos de limpieza.
-
-### 7. **Casting a unsigned char**
+### 3.  **Casting a unsigned char**
 
 En funciones de comparación (`memcmp`, `strncmp`) se usa unsigned char para comparaciones correctas de bytes.
 
-### 8. **Funciones estáticas helper**
 
-Funciones complejas se descomponen en helpers estáticos para mejor legibilidad y reutilización.
+### 3.  **Liberar toda la memoria asignada dinámicamente**
+
+Cada malloc/calloc debe ir acompañado al final por su correspondiente free() para evitar leaks de memoria. Se puede comprobar usando **Valgrind.**
