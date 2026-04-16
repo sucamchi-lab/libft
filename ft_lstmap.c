@@ -43,3 +43,27 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
+
+/*
+#include <stdio.h>
+
+static void	*dup_content(void *p)
+{
+	return (ft_strdup((char *)p));
+}
+
+static void	del(void *p)
+{
+	free(p);
+}
+
+int main(void)
+{
+	t_list *a = ft_lstnew(ft_strdup("hola"));
+	t_list *mapped = ft_lstmap(a, dup_content, del);
+	printf("mapped: %s\n", (char *)mapped->content);
+	ft_lstclear(&a, del);
+	ft_lstclear(&mapped, del);
+	return (0);
+}
+*/

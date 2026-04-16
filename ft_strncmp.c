@@ -27,3 +27,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
+
+/*
+#include <stdio.h>
+
+int main(void)
+{
+	printf("cmp1: %d\n", ft_strncmp("abc", "abc", 3));
+	printf("cmp2: %d\n", ft_strncmp("abc", "abd", 3));
+	return (0);
+}
+*/

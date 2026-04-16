@@ -35,3 +35,17 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(ptr, count * size);
 	return (ptr);
 }
+
+/*
+#include <stdio.h>
+
+int main(void)
+{
+	int *arr = ft_calloc(4, sizeof(int));
+	if (!arr)
+		return (1);
+	printf("arr[0]=%d arr[3]=%d\n", arr[0], arr[3]);
+	free(arr);
+	return (0);
+}
+*/

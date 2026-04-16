@@ -6,11 +6,9 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 19:49:52 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/14 20:02:50 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/16 13:53:15 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "libft.h"
 
@@ -38,14 +36,16 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
+
 /*
+
 #include <stdio.h>
 
 int main(void)
 {
 	const char *str = "   -12345abc";
 	int result = ft_atoi(str);
-	printf("The integer value is: %d\n", result);
-	return 0;
+	printf("%d\n", result);
+	return (0);
 }
 */

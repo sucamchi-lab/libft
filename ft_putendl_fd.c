@@ -21,3 +21,14 @@ void	ft_putendl_fd(char *s, int fd)
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }
+
+/*
+#include <stdio.h>
+
+int main(void)
+{
+	printf("Salida esperada: linea\n");
+	ft_putendl_fd("linea", 1);
+	return (0);
+}
+*/

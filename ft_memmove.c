@@ -54,3 +54,15 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	}
 	return (dest);
 }
+
+/*
+#include <stdio.h>
+
+int main(void)
+{
+	char str[20] = "123456789";
+	ft_memmove(str + 2, str, 5);
+	printf("Resultado: %s\n", str);
+	return (0);
+}
+*/

@@ -35,3 +35,24 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
+
+/*
+#include <stdio.h>
+
+static char	to_upper_even(unsigned int i, char c)
+{
+	if (i % 2 == 0 && c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
+}
+
+int main(void)
+{
+	char *res = ft_strmapi("abcdef", to_upper_even);
+	if (!res)
+		return (1);
+	printf("strmapi: %s\n", res);
+	free(res);
+	return (0);
+}
+*/

@@ -31,3 +31,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(str, s2, len);
 	return (str);
 }
+
+/*
+
+#include <stdio.h>
+
+int main(void)
+{
+	char *join = ft_strjoin("hola", "42");
+	if (!join)
+		return (1);
+	printf("join: %s\n", join);
+	free(join);
+	return (0);
+}
+*/

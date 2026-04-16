@@ -28,3 +28,15 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	ft_putchar_fd((char)(nb % 10 + '0'), fd);
 }
+
+/*
+#include <stdio.h>
+
+int main(void)
+{
+	printf("Salida esperada: -1234\n");
+	ft_putnbr_fd(-1234, 1);
+	ft_putchar_fd('\n', 1);
+	return (0);
+}
+*/

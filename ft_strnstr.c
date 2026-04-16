@@ -34,3 +34,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
+
+/*
+#include <stdio.h>
+
+int main(void)
+{
+	char *res = ft_strnstr("hola mundo", "mundo", 10);
+	printf("Resultado: %s\n", res);
+	return (0);
+}
+*/

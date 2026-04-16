@@ -115,3 +115,25 @@ char	**ft_split(char const *s, char c)
 	}
 	return (arr);
 }
+
+/*
+#include <stdio.h>
+
+int main(void)
+{
+	char **arr = ft_split("uno,dos,tres", ',');
+	int i;
+
+	if (!arr)
+		return (1);
+	i = 0;
+	while (arr[i])
+	{
+		printf("arr[%d]: %s\n", i, arr[i]);
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+	return (0);
+}
+*/

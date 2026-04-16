@@ -25,3 +25,17 @@ t_list	*ft_lstnew(void *content)
 	new_node->next = NULL;
 	return (new_node);
 }
+
+/*
+#include <stdio.h>
+
+int main(void)
+{
+	t_list *node = ft_lstnew("hola");
+	if (!node)
+		return (1);
+	printf("content: %s\n", (char *)node->content);
+	free(node);
+	return (0);
+}
+*/

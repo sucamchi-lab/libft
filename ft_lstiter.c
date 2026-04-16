@@ -24,3 +24,23 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
+
+/*
+#include <stdio.h>
+
+static void	print_node(void *p)
+{
+	printf("%s\n", (char *)p);
+}
+
+int main(void)
+{
+	t_list *a = ft_lstnew("uno");
+	t_list *b = ft_lstnew("dos");
+	a->next = b;
+	ft_lstiter(a, print_node);
+	free(b);
+	free(a);
+	return (0);
+}
+*/

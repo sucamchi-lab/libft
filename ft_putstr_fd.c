@@ -24,3 +24,15 @@ void	ft_putstr_fd(char *s, int fd)
 		s++;
 	}
 }
+
+/*
+#include <stdio.h>
+
+int main(void)
+{
+	printf("Salida esperada: hola\n");
+	ft_putstr_fd("hola", 1);
+	ft_putchar_fd('\n', 1);
+	return (0);
+}
+*/

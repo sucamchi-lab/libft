@@ -21,3 +21,21 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	del(lst->content);
 	free(lst);
 }
+
+/*
+#include <stdio.h>
+
+static void	del(void *p)
+{
+	free(p);
+}
+
+int main(void)
+{
+	char *s = ft_strdup("hola");
+	t_list *node = ft_lstnew(s);
+	ft_lstdelone(node, del);
+	printf("Nodo liberado correctamente\n");
+	return (0);
+}
+*/

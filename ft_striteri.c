@@ -27,3 +27,21 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		i++;
 	}
 }
+
+/*
+#include <stdio.h>
+
+static void	to_upper_even(unsigned int i, char *c)
+{
+	if (i % 2 == 0 && *c >= 'a' && *c <= 'z')
+		*c -= 32;
+}
+
+int main(void)
+{
+	char str[] = "abcdef";
+	ft_striteri(str, to_upper_even);
+	printf("striteri: %s\n", str);
+	return (0);
+}
+*/

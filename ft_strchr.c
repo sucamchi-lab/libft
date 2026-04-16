@@ -28,3 +28,14 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
+
+/*
+#include <stdio.h>
+
+int main(void)
+{
+	char *res = ft_strchr("libft", 'f');
+	printf("Resultado: %s\n", res);
+	return (0);
+}
+*/
