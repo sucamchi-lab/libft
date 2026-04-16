@@ -2179,6 +2179,6 @@ Las funciones `ft_itoa` y `ft_putnbr_fd` convierten a `long` para evitar int ove
 En funciones de comparación (`memcmp`, `strncmp`) se usa unsigned char para comparaciones correctas de bytes.
 
 
-### 3.  **Liberar toda la memoria asignada dinámicamente**
+### 4.  **Liberar toda la memoria asignada dinámicamente**
 
 Cada malloc/calloc debe ir acompañado al final por su correspondiente free() para evitar leaks de memoria. Se puede comprobar usando **Valgrind.**
