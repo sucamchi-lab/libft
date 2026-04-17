@@ -8,7 +8,7 @@ _Este proyecto ha sido creado como parte del currículo de 42 por scamlett._
 
 Su objetivo es disponer de una librería personal y reutilizable para los siguientes proyectos del cursus, con código propio, legible y compatible con la norma.
 
-He decidido redactar este README en español para poder explicar la funcionalidad del código y de cada función de la forma más clara y natural posible. Así, cualquier compañero o evaluador que necesite una explicación detallada podrá comprenderla fácilmente. Además, la comunicación habitual entre peers en 42 Málaga suele ser en español, lo que facilita el intercambio de información y la colaboración.
+He decidido redactar este README en español para poder explicar la funcionalidad del código de la forma más clara y natural posible. Así, cualquier compañero o evaluador de 42 Málaga que necesite una explicación detallada podrá comprenderla fácilmente. 
 
 ## Instrucciones
 
@@ -356,8 +356,6 @@ int ft_tolower(int c)
 ---
 
 ### C. Funciones de Inspección de Cadenas
-
-Estas funciones examinan o buscan dentro de cadenas sin modificarlas.
 
 ### 🔹 `ft_strlen`
 
