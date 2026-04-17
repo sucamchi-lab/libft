@@ -50,7 +50,7 @@ Para que un `Makefile` funcione correctamente necesitas:
 Este Makefile está compuesto así:
 
 - `NAME = libft.a`: nombre de la librería final.
-- `CC = cc`: compilador de C.
+- `CC = cc`: dsesigna el nombre del compilador de C que vamos a utilizar.
 - `CFLAGS = -Wall -Wextra -Werror`: activa avisos y trata warnings como error.
 - `AR = ar` y `ARFLAGS = rcs`: herramienta y flags para crear la librería estática.
 - `SRCS = ...`: lista de todos los `.c` del proyecto.
@@ -62,13 +62,22 @@ Este Makefile está compuesto así:
 - `fclean: clean` + `rm -f $(NAME)`: borra objetos y también la librería.
 - `re: fclean all`: reconstrucción completa desde cero.
 
+Opcionalmente, el Makefile puede incluir un apartado final llamado `.PHONY`
+
+`.PHONY: all clean fclean re`
+
+Esto evita que `make` confunda comandos con el nombre de algún archivo, generando comportamiento inesperado si tuvieramos un archivo llamado `all.c` o `clean.c`, por ejemplo. Pero ya que conocemos el nombre de los archivos que vamos a crear con antelación, podemos omitir este paso.
+
 
 ## Recursos
 
 1. Manuales del sistema para funciones estandar de C (glibc).
 2. PDF oficial de 42 con la norma y criterios de evaluacion del proyecto libft.
 3. https://man7.org/linux/man-pages/index.html (manual online de Linux)
-4. Se ha hecho un uso limitado y responsable de la IA para formatear este README.md, refactorizar líneas de código en acorde con la norma y [DRY (Don't Repeat Yourself)](https://www.arsys.es/blog/dont-repeat-yourself-en-programacion), y para aclarar dudas relacionadas con la implementación y funcionalidad de los archivos .c y asegurarme que he entendido el código.
+4. https://github.com/openbsd/src (repositorio oficial de código fuente de openbsd)
+5. https://makefiletutorial.com/ & https://docs.redhat.com/es/documentation/red_hat_enterprise_linux/8/html/developing_c_and_cpp_applications_in_rhel_8/example-building-a-c-program-using-a-makefile_managing-more-code-with-make (Makefile)
+
+ Se ha hecho un uso limitado y responsable de la IA para formatear este README.md, refactorizar líneas de código en acorde con la norma y [DRY (Don't Repeat Yourself)](https://www.arsys.es/blog/dont-repeat-yourself-en-programacion), y para aclarar dudas relacionadas con la implementación y funcionalidad de los archivos .c y asegurarme que he entendido el código.
 
 Todo el código final se ha verificado con `make` y `norminette`.
 
@@ -2178,7 +2187,6 @@ Las funciones `ft_itoa` y `ft_putnbr_fd` convierten a `long` para evitar int ove
 
 En funciones de comparación (`memcmp`, `strncmp`) se usa unsigned char para comparaciones correctas de bytes.
 
-
 ### 4.  **Liberar toda la memoria asignada dinámicamente**
 
-Cada malloc/calloc debe ir acompañado al final por su correspondiente free() para evitar leaks de memoria. Se puede comprobar usando **Valgrind.**
+Cada malloc/calloc debe ir acompañado al final por su correspondiente free() para evitar leaks de memoria. Se puede comprobar usando **valgrind.**
