@@ -4,7 +4,7 @@ _Este proyecto ha sido creado como parte del currículo de 42 por scamlett._
 
 ## Descripción
 
-`libft` es una librería en C que reimplementa funciones base de `libc` y añade utilidades para strings, memoria, escritura en file descriptor (fd) y listas enlazadas.
+`libft` es una librería en C que reimplementa funciones base de `libc` y añade utilidades para strings, memoria, escritura en [descriptor de archivo](https://es.wikipedia.org/wiki/Descriptor_de_archivo) y listas enlazadas.
 
 Su objetivo es disponer de una librería personal y reutilizable para los siguientes proyectos del cursus, con código propio, legible y compatible con la norma.
 
@@ -59,7 +59,7 @@ Este Makefile está compuesto así:
 - `$(NAME): $(OBJS)`: define que la librería depende de todos los objetos.
 - `$(AR) $(ARFLAGS) $(NAME) $(OBJS)`: empaqueta los `.o` dentro de `libft.a`.
 - `clean:` + `rm -f $(OBJS)`: borra solo archivos objeto.
-- `fclean: clean` + `rm -f $(NAME)`: borra objetos y también la librería.
+- `fclean: clean` + `rm -f $(NAME)`: borra objetos y librería.
 - `re: fclean all`: reconstrucción completa desde cero.
 
 Opcionalmente, el Makefile puede incluir un apartado final llamado `.PHONY`
@@ -76,6 +76,9 @@ Esto evita que `make` confunda comandos con el nombre de algún archivo, generan
 3. https://man7.org/linux/man-pages/index.html (manual online de Linux)
 4. https://github.com/openbsd/src (repositorio oficial de código fuente de openbsd)
 5. https://makefiletutorial.com/ & https://docs.redhat.com/es/documentation/red_hat_enterprise_linux/8/html/developing_c_and_cpp_applications_in_rhel_8/example-building-a-c-program-using-a-makefile_managing-more-code-with-make (Makefile)
+6. https://www.learn-c.org/en/Linked_lists (listas enlazadas)
+7. https://pythontutor.com/c.html# (debugger online)
+8. https://www.boot.dev/ (curso online de manejo de memoria en C, estructuras de datos y algoritmos)
 
  Se ha hecho un uso limitado y responsable de la IA para formatear este README.md, refactorizar líneas de código en acorde con la norma y [DRY (Don't Repeat Yourself)](https://www.arsys.es/blog/dont-repeat-yourself-en-programacion), y para aclarar dudas relacionadas con la implementación y funcionalidad de los archivos .c y asegurarme que he entendido el código.
 
@@ -85,7 +88,7 @@ Todo el código final se ha verificado con `make` y `norminette`.
 
 ## Índice de Contenidos
 
-1. [Introducción](#introducción)
+1. [Índice](#índice)
 2. [Funciones de Libc ](#1-funciones-de-libc)
 3. [Funciones Adicionales](#2-funciones-adicionales)
 4. [Listas Enlazadas](#3-listas-enlazadas)
@@ -93,61 +96,63 @@ Todo el código final se ha verificado con `make` y `norminette`.
 
 ---
 
-## Introducción
+## Índice
 
 Esta biblioteca contiene **43 funciones** en total, algunas de cuáles reimplementan funciones estándar de C, más algunas funciones adicionales útiles para proyectos futuros.
 
 ## 1. Funciones de Libc
 
-1. `ft_isalpha.c`
-2. `ft_isdigit.c`
-3. `ft_isalnum.c`
-4. `ft_isascii.c`
-5. `ft_isprint.c`
-6. `ft_strlen.c`
-7. `ft_memset.c`
-8. `ft_bzero.c`
-9. `ft_memcpy.c`
-10. `ft_memmove.c`
-11. `ft_strlcpy.c`
-12. `ft_strlcat.c`
-13. `ft_toupper.c`
-14. `ft_tolower.c`
-15. `ft_strchr.c`
-16. `ft_strrchr.c`
-17. `ft_strncmp.c`
-18. `ft_memchr.c`
-19. `ft_memcmp.c`
-20. `ft_strnstr.c`
-21. `ft_atoi.c`
-22. `ft_calloc.c`
-23. `ft_strdup.c`
+1. [`ft_isalpha.c`](#🔹-ft_isalpha)
+2. [`ft_isdigit.c`](#🔹-ft_isdigit)
+3. [`ft_isalnum.c`](#🔹-ft_isalnum)
+4. [`ft_isascii.c`](#🔹-ft_isascii)
+5. [`ft_isprint.c`](#🔹-ft_isprint)
+6. [`ft_strlen.c`](#🔹-ft_strlen)
+7. [`ft_memset.c`](#🔹-ft_memset)
+8. [`ft_bzero.c`](#🔹-ft_bzero)
+9. [`ft_memcpy.c`](#🔹-ft_memcpy)
+10. [`ft_memmove.c`](#🔹-ft_memmove)
+11. [`ft_strlcpy.c`](#🔹-ft_strlcpy)
+12. [`ft_strlcat.c`](#🔹-ft_strlcat)
+13. [`ft_toupper.c`](#🔹-ft_toupper)
+14. [`ft_tolower.c`](#🔹-ft_tolower)
+15. [`ft_strchr.c`](#🔹-ft_strchr)
+16. [`ft_strrchr.c`](#🔹-ft_strrchr)
+17. [`ft_strncmp.c`](#🔹-ft_strncmp)
+18. [`ft_memchr.c`](#🔹-ft_memchr)
+19. [`ft_memcmp.c`](#🔹-ft_memcmp)
+20. [`ft_strnstr.c`](#🔹-ft_strnstr)
+21. [`ft_atoi.c`](#🔹-ft_atoi)
+22. [`ft_calloc.c`](#🔹-ft_calloc)
+23. [`ft_strdup.c`](#🔹-ft_strdup)
 
 ## 2. Funciones Adicionales
 
-1. `ft_substr.c`
-2. `ft_strjoin.c`
-3. `ft_strtrim.c`
-4. `ft_split.c`
-5. `ft_itoa.c`
-6. `ft_strmapi.c`
-7. `ft_striteri.c`
-8. `ft_putchar_fd.c`
-9. `ft_putstr_fd.c`
-10. `ft_putendl_fd.c`
-11. `ft_putnbr_fd.c`
+1. [`ft_substr.c`](#🔹-ft_substr)
+2. [`ft_strjoin.c`](#🔹-ft_strjoin)
+3. [`ft_strtrim.c`](#🔹-ft_strtrim)
+4. [`ft_split.c`](#🔹-ft_split)
+5. [`ft_itoa.c`](#🔹-ft_itoa)
+6. [`ft_strmapi.c`](#🔹-ft_strmapi)
+7. [`ft_striteri.c`](#🔹-ft_striteri)
+8. [`ft_putchar_fd.c`](#🔹-ft_putchar_fd)
+9. [`ft_putstr_fd.c`](#🔹-ft_putstr_fd)
+10. [`ft_putendl_fd.c`](#🔹-ft_putendl_fd)
+11. [`ft_putnbr_fd.c`](#🔹-ft_putnbr_fd)
 
 ## 3. Listas Enlazadas
 
-1. `ft_lstnew.c`
-2. `ft_lstadd_front.c`
-3. `ft_lstsize.c`
-4. `ft_lstlast.c`
-5. `ft_lstadd_back.c`
-6. `ft_lstdelone.c`
-7. `ft_lstclear.c`
-8. `ft_lstiter.c`
-9. `ft_lstmap.c`
+1. [`ft_lstnew.c`](#🔹-ft_lstnew)
+2. [`ft_lstadd_front.c`](#🔹-ft_lstadd_front)
+3. [`ft_lstsize.c`](#🔹-ft_lstsize)
+4. [`ft_lstlast.c`](#🔹-ft_lstlast)
+5. [`ft_lstadd_back.c`](#🔹-ft_lstadd_back)
+6. [`ft_lstdelone.c`](#🔹-ft_lstdelone)
+7. [`ft_lstclear.c`](#🔹-ft_lstclear)
+8. [`ft_lstiter.c`](#🔹-ft_lstiter)
+9. [`ft_lstmap.c`](#🔹-ft_lstmap)
+
+---
 
 ### A. Funciones de Clasificación de Caracteres
 
@@ -2175,7 +2180,7 @@ t_list *copia = ft_lstmap(original, duplicate_string, delete_string);
 
 Casi todas las funciones verifican punteros NULL antes de usarlos para evitar segfault.
 
-### 2. **Manejo de INT_MIN y Protección contra overflow**
+### 2. **Protección contra overflow**
 
 Las funciones `ft_itoa` y `ft_putnbr_fd` convierten a `long` para evitar int overflow.
 
