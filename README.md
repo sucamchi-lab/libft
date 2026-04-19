@@ -38,37 +38,6 @@ make re
 
 La salida del proyecto es el archivo `libft.a` en la raíz del repositorio.
 
-## Como crear un Makefile
-
-Para que un `Makefile` funcione correctamente necesitas:
-
-1. Un **objetivo principal** (en este caso `libft.a`).
-2. Variables con herramientas y flags (`CC`, `CFLAGS`, `AR`, `ARFLAGS`).
-3. La lista de fuentes (`SRCS`) y su transformación a objetos (`OBJS`).
-4. Reglas con dependencias claras (`all`, `clean`, `fclean`, `re`).
-
-Este Makefile está compuesto así:
-
-- `NAME = libft.a`: nombre de la librería final.
-- `CC = cc`: dsesigna el nombre del compilador de C que vamos a utilizar.
-- `CFLAGS = -Wall -Wextra -Werror`: activa avisos y trata warnings como error.
-- `AR = ar` y `ARFLAGS = rcs`: herramienta y flags para crear la librería estática.
-- `SRCS = ...`: lista de todos los `.c` del proyecto.
-- `OBJS = $(SRCS:.c=.o)`: convierte automáticamente cada `.c` en `.o`.
-- `all: $(NAME)`: objetivo por defecto; al hacer `make`, construye `$(NAME)`.
-- `$(NAME): $(OBJS)`: define que la librería depende de todos los objetos.
-- `$(AR) $(ARFLAGS) $(NAME) $(OBJS)`: empaqueta los `.o` dentro de `libft.a`.
-- `clean:` + `rm -f $(OBJS)`: borra solo archivos objeto.
-- `fclean: clean` + `rm -f $(NAME)`: borra objetos y librería.
-- `re: fclean all`: reconstrucción completa desde cero.
-
-Opcionalmente, el Makefile puede incluir un apartado final llamado `.PHONY`
-
-`.PHONY: all clean fclean re`
-
-Esto evita que `make` confunda comandos con el nombre de algún archivo, generando comportamiento inesperado si tuvieramos un archivo llamado `all.c` o `clean.c`, por ejemplo. Pero ya que conocemos el nombre de los archivos que vamos a crear con antelación, podemos omitir este paso.
-
-
 ## Recursos
 
 1. Manuales del sistema para funciones estandar de C (glibc).
@@ -86,13 +55,12 @@ Todo el código final se ha verificado con `make` y `norminette`.
 
 # Documentación Completa de Libft
 
-## Índice de Contenidos
-
 1. [Índice](#índice)
 2. [Funciones de Libc ](#1-funciones-de-libc)
 3. [Funciones Adicionales](#2-funciones-adicionales)
 4. [Listas Enlazadas](#3-listas-enlazadas)
-5. [Conceptos Clave](#conceptos-clave)
+5. [Cómo crear un Makefile](#cómo-crear-un-makefile)
+6. [Conceptos Clave](#conceptos-clave)
 
 ---
 
@@ -154,9 +122,6 @@ Esta biblioteca contiene **43 funciones** en total, algunas de cuáles reimpleme
 
 ---
 
-### A. Funciones de Clasificación de Caracteres
-
-Estas funciones verifican propiedades de caracteres examinando sus valores ASCII.
 
 ### ft_isalpha
 
@@ -301,8 +266,6 @@ int ft_isprint(int c)
 
 ---
 
-### B. Funciones de Conversión de Mayúsculas/Minúsculas
-
 ### ft_toupper
 
 **Archivo:** `ft_toupper.c`
@@ -359,8 +322,6 @@ int ft_tolower(int c)
 - `ft_tolower('z')` → devuelve 'z' (sin cambio)
 
 ---
-
-### C. Funciones de Inspección de Cadenas
 
 ### ft_strlen
 
@@ -589,8 +550,6 @@ void *ft_memchr(const void *s, int c, size_t n)
 - `ft_memchr("Hola", 'l', 4)` → devuelve puntero a "la"
 
 ---
-
-### D. Funciones de Manipulación de Cadenas
 
 Estas funciones crean nuevas cadenas o modifican las existentes.
 
@@ -1111,10 +1070,6 @@ free(resultado);
 
 ---
 
-### E. Funciones de Memoria
-
-Estas funciones operan sobre bloques de memoria raw (bytes).
-
 ### ft_memset
 
 **Archivo:** `ft_memset.c`
@@ -1382,8 +1337,6 @@ free(array);
 
 ---
 
-### F. Funciones de Conversión
-
 ### ft_atoi
 
 **Archivo:** `ft_atoi.c`
@@ -1534,8 +1487,6 @@ free(num);
 ```
 
 ---
-
-### G. Funciones de Iteración de Cadenas
 
 ### ft_striteri
 
@@ -1748,10 +1699,6 @@ ft_putnbr_fd(-12345, 1);  // Escribe "-12345" en stdout
 ```
 
 ---
-
-### I. Funciones de Listas Enlazadas
-
-Todas estas funciones trabajan con la estructura `t_list`:
 
 ```c
 typedef struct s_list
@@ -2173,6 +2120,41 @@ t_list *original = /* lista de strings */;
 t_list *copia = ft_lstmap(original, duplicate_string, delete_string);
 // copia es una nueva lista con copias de los strings
 ```
+
+ ---
+
+
+## Cómo crear un Makefile
+
+Para que un `Makefile` funcione correctamente necesitas:
+
+1. Un **objetivo principal** (en este caso `libft.a`).
+2. Variables con herramientas y flags (`CC`, `CFLAGS`, `AR`, `ARFLAGS`).
+3. La lista de fuentes (`SRCS`) y su transformación a objetos (`OBJS`).
+4. Reglas con dependencias claras (`all`, `clean`, `fclean`, `re`).
+
+Este Makefile está compuesto así:
+
+- `NAME = libft.a`: nombre de la librería final.
+- `CC = cc`: dsesigna el nombre del compilador de C que vamos a utilizar.
+- `CFLAGS = -Wall -Wextra -Werror`: activa avisos y trata warnings como error.
+- `AR = ar` y `ARFLAGS = rcs`: herramienta y flags para crear la librería estática.
+- `SRCS = ...`: lista de todos los `.c` del proyecto.
+- `OBJS = $(SRCS:.c=.o)`: convierte automáticamente cada `.c` en `.o`.
+- `all: $(NAME)`: objetivo por defecto; al hacer `make`, construye `$(NAME)`.
+- `$(NAME): $(OBJS)`: define que la librería depende de todos los objetos.
+- `$(AR) $(ARFLAGS) $(NAME) $(OBJS)`: empaqueta los `.o` dentro de `libft.a`.
+- `clean:` + `rm -f $(OBJS)`: borra solo archivos objeto.
+- `fclean: clean` + `rm -f $(NAME)`: borra objetos y librería.
+- `re: fclean all`: reconstrucción completa desde cero.
+
+Opcionalmente, el Makefile puede incluir un apartado final llamado `.PHONY`
+
+`.PHONY: all clean fclean re`
+
+Esto evita que `make` confunda comandos con el nombre de algún archivo, generando comportamiento inesperado si tuvieramos un archivo llamado `all.c` o `clean.c`, por ejemplo. Pero ya que conocemos el nombre de los archivos que vamos a crear con antelación, podemos omitir este paso.
+
+---
 
 ## Conceptos Clave
 
