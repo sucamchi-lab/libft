@@ -158,7 +158,7 @@ Esta biblioteca contiene **43 funciones** en total, algunas de cuáles reimpleme
 
 Estas funciones verifican propiedades de caracteres examinando sus valores ASCII.
 
-### 🔹 `ft_isalpha`
+### ft_isalpha
 
 **Archivo:** `ft_isalpha.c`
 
@@ -187,7 +187,7 @@ int ft_isalpha(int c)
 
 ---
 
-### 🔹 `ft_isdigit`
+### ft_isdigit
 
 **Archivo:** `ft_isdigit.c`
 
@@ -215,7 +215,7 @@ int ft_isdigit(int c)
 
 ---
 
-### 🔹 `ft_isalnum`
+### ft_isalnum
 
 **Archivo:** `ft_isalnum.c`
 
@@ -244,7 +244,7 @@ int ft_isalnum(int c)
 
 ---
 
-### 🔹 `ft_isascii`
+### ft_isascii
 
 **Archivo:** `ft_isascii.c`
 
@@ -272,7 +272,7 @@ int ft_isascii(int c)
 
 ---
 
-### 🔹 `ft_isprint`
+### ft_isprint
 
 **Archivo:** `ft_isprint.c`
 
@@ -303,7 +303,7 @@ int ft_isprint(int c)
 
 ### B. Funciones de Conversión de Mayúsculas/Minúsculas
 
-### 🔹 `ft_toupper`
+### ft_toupper
 
 **Archivo:** `ft_toupper.c`
 
@@ -332,7 +332,7 @@ int ft_toupper(int c)
 
 ---
 
-### 🔹 `ft_tolower`
+### ft_tolower
 
 **Archivo:** `ft_tolower.c`
 
@@ -362,7 +362,7 @@ int ft_tolower(int c)
 
 ### C. Funciones de Inspección de Cadenas
 
-### 🔹 `ft_strlen`
+### ft_strlen
 
 **Archivo:** `ft_strlen.c`
 
@@ -394,7 +394,7 @@ size_t ft_strlen(const char *str)
 
 ---
 
-### 🔹 `ft_strchr`
+### ft_strchr
 
 **Archivo:** `ft_strchr.c`
 
@@ -431,7 +431,7 @@ char *ft_strchr(const char *s, int c)
 
 ---
 
-### 🔹 `ft_strrchr`
+### ft_strrchr
 
 **Archivo:** `ft_strrchr.c`
 
@@ -468,7 +468,7 @@ char *ft_strrchr(const char *s, int c)
 
 ---
 
-### 🔹 `ft_strncmp`
+### ft_strncmp
 
 **Archivo:** `ft_strncmp.c`
 
@@ -505,7 +505,7 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 
 ---
 
-### 🔹 `ft_strnstr`
+### ft_strnstr
 
 **Archivo:** `ft_strnstr.c`
 
@@ -551,7 +551,7 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 
 ---
 
-### 🔹 `ft_memchr`
+### ft_memchr
 
 **Archivo:** `ft_memchr.c`
 
@@ -594,7 +594,7 @@ void *ft_memchr(const void *s, int c, size_t n)
 
 Estas funciones crean nuevas cadenas o modifican las existentes.
 
-### 🔹 `ft_strdup`
+### ft_strdup
 
 **Archivo:** `ft_strdup.c`
 
@@ -644,7 +644,7 @@ free(copia);
 
 ---
 
-### 🔹 `ft_strlcpy`
+### ft_strlcpy
 
 **Archivo:** `ft_strlcpy.c`
 
@@ -690,7 +690,7 @@ size_t len = ft_strlcpy(buffer, "Hola mundo", 10);
 
 ---
 
-### 🔹 `ft_strlcat`
+### ft_strlcat
 
 **Archivo:** `ft_strlcat.c`
 
@@ -744,7 +744,7 @@ ft_strlcat(buffer, "mundo", 20);
 
 ---
 
-### 🔹 `ft_substr`
+### ft_substr
 
 **Archivo:** `ft_substr.c`
 
@@ -804,7 +804,7 @@ free(sub);
 
 ---
 
-### 🔹 `ft_strjoin`
+### ft_strjoin
 
 **Archivo:** `ft_strjoin.c`
 
@@ -848,7 +848,7 @@ free(resultado);
 
 ---
 
-### 🔹 `ft_strtrim`
+### ft_strtrim
 
 **Archivo:** `ft_strtrim.c`
 
@@ -901,7 +901,7 @@ free(trimmed);
 
 ---
 
-### 🔹 `ft_split`
+### ft_split
 
 **Archivo:** `ft_split.c`
 
@@ -1058,7 +1058,7 @@ char **palabras = ft_split("Hola mundo cruel", ' ');
 
 ---
 
-### 🔹 `ft_strmapi`
+### ft_strmapi
 
 **Archivo:** `ft_strmapi.c`
 
@@ -1115,7 +1115,7 @@ free(resultado);
 
 Estas funciones operan sobre bloques de memoria raw (bytes).
 
-### 🔹 `ft_memset`
+### ft_memset
 
 **Archivo:** `ft_memset.c`
 
@@ -1153,7 +1153,7 @@ ft_memset(buffer, 'A', 10);
 
 ---
 
-### 🔹 `ft_bzero`
+### ft_bzero
 
 **Archivo:** `ft_bzero.c`
 
@@ -1183,7 +1183,7 @@ ft_bzero(buffer, 10);
 
 ---
 
-### 🔹 `ft_memcpy`
+### ft_memcpy
 
 **Archivo:** `ft_memcpy.c`
 
@@ -1230,7 +1230,7 @@ ft_memcpy(dest, src, 5);
 
 ---
 
-### 🔹 `ft_memmove`
+### ft_memmove
 
 **Archivo:** `ft_memmove.c`
 
@@ -1294,7 +1294,7 @@ ft_memmove(buffer + 2, buffer, 5);
 
 ---
 
-### 🔹 `ft_memcmp`
+### ft_memcmp
 
 **Archivo:** `ft_memcmp.c`
 
@@ -1338,7 +1338,7 @@ ft_memcmp(a, b, 4); // devuelve 0 (iguales)
 
 ---
 
-### 🔹 `ft_calloc`
+### ft_calloc
 
 **Archivo:** `ft_calloc.c`
 
@@ -1384,7 +1384,7 @@ free(array);
 
 ### F. Funciones de Conversión
 
-### 🔹 `ft_atoi`
+### ft_atoi
 
 **Archivo:** `ft_atoi.c`
 
@@ -1434,7 +1434,7 @@ int ft_atoi(const char *str)
 
 ---
 
-### 🔹 `ft_itoa`
+### ft_itoa
 
 **Archivo:** `ft_itoa.c`
 
@@ -1537,7 +1537,7 @@ free(num);
 
 ### G. Funciones de Iteración de Cadenas
 
-### 🔹 `ft_striteri`
+### ft_striteri
 
 **Archivo:** `ft_striteri.c`
 
@@ -1581,7 +1581,7 @@ ft_striteri(str, mi_funcion);
 
 ---
 
-### 🔹 `ft_strmapi`
+### ft_strmapi
 
 **Ya documentada en la sección de Manipulación de Cadenas**
 
@@ -1596,7 +1596,7 @@ Diferencia con `ft_striteri`:
 
 Estas funciones escriben en descriptores de archivo usando la llamada al sistema `write()`.
 
-### 🔹 `ft_putchar_fd`
+### ft_putchar_fd
 
 **Archivo:** `ft_putchar_fd.c`
 
@@ -1626,7 +1626,7 @@ ft_putchar_fd('!', 2);  // Escribe '!' en stderr
 
 ---
 
-### 🔹 `ft_putstr_fd`
+### ft_putstr_fd
 
 **Archivo:** `ft_putstr_fd.c`
 
@@ -1661,7 +1661,7 @@ ft_putstr_fd("Hola mundo", 1);  // Escribe "Hola mundo" en stdout
 
 ---
 
-### 🔹 `ft_putendl_fd`
+### ft_putendl_fd
 
 **Archivo:** `ft_putendl_fd.c`
 
@@ -1693,7 +1693,7 @@ ft_putendl_fd("Hola mundo", 1);
 
 ---
 
-### 🔹 `ft_putnbr_fd`
+### ft_putnbr_fd
 
 **Archivo:** `ft_putnbr_fd.c`
 
@@ -1761,7 +1761,7 @@ typedef struct s_list
 }                   t_list;
 ```
 
-### 🔹 `ft_lstnew`
+### ft_lstnew
 
 **Archivo:** `ft_lstnew.c`
 
@@ -1802,7 +1802,7 @@ t_list *nodo = ft_lstnew(num);
 
 ---
 
-### 🔹 `ft_lstadd_front`
+### ft_lstadd_front
 
 **Archivo:** `ft_lstadd_front.c`
 
@@ -1845,7 +1845,7 @@ ft_lstadd_front(&lista, ft_lstnew("Primero"));
 
 ---
 
-### 🔹 `ft_lstadd_back`
+### ft_lstadd_back
 
 **Archivo:** `ft_lstadd_back.c`
 
@@ -1896,7 +1896,7 @@ ft_lstadd_back(&lista, ft_lstnew("Tercero"));
 
 ---
 
-### 🔹 `ft_lstlast`
+### ft_lstlast
 
 **Archivo:** `ft_lstlast.c`
 
@@ -1931,7 +1931,7 @@ t_list *ultimo = ft_lstlast(lista);
 
 ---
 
-### 🔹 `ft_lstsize`
+### ft_lstsize
 
 **Archivo:** `ft_lstsize.c`
 
@@ -1969,7 +1969,7 @@ int tam = ft_lstsize(lista);  // devuelve 3
 
 ---
 
-### 🔹 `ft_lstdelone`
+### ft_lstdelone
 
 **Archivo:** `ft_lstdelone.c`
 
@@ -2007,7 +2007,7 @@ ft_lstdelone(nodo, delete_content);
 
 ---
 
-### 🔹 `ft_lstclear`
+### ft_lstclear
 
 **Archivo:** `ft_lstclear.c`
 
@@ -2062,7 +2062,7 @@ ft_lstclear(&lista, delete_content);
 
 ---
 
-### 🔹 `ft_lstiter`
+### ft_lstiter
 
 **Archivo:** `ft_lstiter.c`
 
@@ -2103,7 +2103,7 @@ ft_lstiter(lista, print_content);
 
 ---
 
-### 🔹 `ft_lstmap`
+### ft_lstmap
 
 **Archivo:** `ft_lstmap.c`
 
