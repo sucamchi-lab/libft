@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:07:38 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:07:44 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 14:04:21 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 14:04:22 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,11 @@ char	*ft_strdup(const char *s1)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	char *dup = ft_strdup("hola");
+	char	*dup;
+
+	dup = ft_strdup("hola");
 	if (!dup)
 		return (1);
 	printf("dup: %s\n", dup);

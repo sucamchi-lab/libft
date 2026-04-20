@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:08:41 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:08:47 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:31:41 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:33:17 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
-	i = (int)ft_strlen(s);
+	i = ft_strlen(s);
 	while (i >= 0)
 	{
 		if (s[i] == (char)c)
@@ -31,9 +31,11 @@ char	*ft_strrchr(const char *s, int c)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	char *res = ft_strrchr("banana", 'a');
+	char	*res;
+
+	res = ft_strrchr("banana", 'a');
 	printf("Resultado: %s\n", res);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:08:34 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:08:40 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 14:04:30 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 14:04:30 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (big[i] && i < len)
 	{
 		j = 0;
-		while (big[i + j] && little[j] && (i + j) < len
-			&& big[i + j] == little[j])
+		while (big[i + j] && little[j] && (i + j) < len && big[i
+			+ j] == little[j])
 		{
 			j++;
 		}
@@ -38,9 +38,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	char *res = ft_strnstr("hola mundo", "mundo", 10);
+	char	*res;
+
+	res = ft_strnstr("hola mundo", "mundo", 10);
 	printf("Resultado: %s\n", res);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:06:49 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:06:55 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:27:17 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:27:17 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ void	*ft_memset(void *s, int c, size_t n)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	char str[20] = "abcdef";
+	char	str[20] = "abcdef";
+
 	ft_memset(str, 'X', 3);
 	printf("Resultado: %s\n", str);
 	return (0);

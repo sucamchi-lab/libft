@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:06:28 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:06:34 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:29:43 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:29:43 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("cmp1: %d\n", ft_memcmp("abc", "abc", 3));
 	printf("cmp2: %d\n", ft_memcmp("abc", "abd", 3));

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:06:42 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:06:48 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 13:26:33 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 13:26:33 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,10 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	char str[20] = "123456789";
+	char	str[20] = "123456789";
+
 	ft_memmove(str + 2, str, 5);
 	printf("Resultado: %s\n", str);
 	return (0);

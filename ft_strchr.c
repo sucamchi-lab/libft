@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:07:31 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:07:37 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:34:39 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:34:40 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,11 @@ char	*ft_strchr(const char *s, int c)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	char *res = ft_strchr("libft", 'f');
+	char	*res;
+
+	res = ft_strchr("libft", 'f');
 	printf("Resultado: %s\n", res);
 	return (0);
 }

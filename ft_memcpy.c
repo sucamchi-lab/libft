@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:06:35 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:06:41 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:29:29 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:29:30 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	char src[] = "12345";
-	char dst[10];
+	char	src[] = "12345";
+	char	dst[10];
+
 	ft_memcpy(dst, src, 6);
 	printf("Copia: %s\n", dst);
 	return (0);
