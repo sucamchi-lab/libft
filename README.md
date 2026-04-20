@@ -2148,12 +2148,7 @@ Este Makefile está compuesto así:
 - `clean:` + `rm -f $(OBJS)`: borra solo archivos objeto.
 - `fclean: clean` + `rm -f $(NAME)`: borra objetos y librería.
 - `re: fclean all`: reconstrucción completa desde cero.
-
-Opcionalmente, el Makefile puede incluir un apartado final llamado `.PHONY`
-
-`.PHONY: all clean fclean re`
-
-Esto evita que `make` confunda comandos con el nombre de algún archivo, generando comportamiento inesperado si tuvieramos un archivo llamado `all.c` o `clean.c`, por ejemplo. Pero ya que conocemos el nombre de los archivos que vamos a crear con antelación, podemos omitir este paso.
+- `.PHONY: all clean fclean re`: exclusión explícita de archivos que contengan esos nombres para evitar conflictos con los comandos del Makefile.
 
 ---
 
@@ -2165,7 +2160,7 @@ Casi todas las funciones verifican punteros NULL antes de usarlos para evitar se
 
 ### 2. **Protección contra overflow**
 
-Las funciones `ft_itoa` y `ft_putnbr_fd` convierten a `long` para evitar int overflow.
+Las funciones `ft_itoa` y `ft_putnbr_fd` convierten `int` a `long` para evitar int overflow.
 
 `ft_calloc` verifica que `count * size` no desborde antes de hacer malloc.
 

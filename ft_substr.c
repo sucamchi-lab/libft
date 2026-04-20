@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:08:55 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:09:01 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 14:32:43 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 14:32:57 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	char *sub = ft_substr("abcdef", 2, 3);
+	char	*sub;
+
+	sub = ft_substr("abcdef", 2, 3);
 	if (!sub)
 		return (1);
 	printf("sub: %s\n", sub);
