@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:09:02 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:09:08 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:12:32 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:12:32 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_tolower(int c)
 
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("ft_tolower('A') = %c\n", ft_tolower('A'));
 	printf("ft_tolower('z') = %c\n", ft_tolower('z'));

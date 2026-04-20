@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:09:16 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:09:22 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:11:34 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:11:35 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 19:49:52 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/16 13:53:15 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 10:51:20 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 10:51:26 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,12 @@ int	ft_atoi(const char *str)
 
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	const char *str = "   -12345abc";
-	int result = ft_atoi(str);
+	const char	*str = "   -12345abc";
+	int			result;
+
+	result = ft_atoi(str);
 	printf("%d\n", result);
 	return (0);
 }

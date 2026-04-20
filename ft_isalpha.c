@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:04:43 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:04:49 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:10:46 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:10:57 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_isalpha(int c)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("ft_isalpha('A') = %d\n", ft_isalpha('A'));
 	printf("ft_isalpha('1') = %d\n", ft_isalpha('1'));

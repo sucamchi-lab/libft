@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:07:59 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:08:05 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:15:18 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:15:19 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	char dst[12] = "Hola";
-	size_t len = ft_strlcat(dst, "42", sizeof(dst));
+	char	dst[12] = "Hola";
+	size_t	len;
+
+	len = ft_strlcat(dst, "42", sizeof(dst));
 	printf("dst: %s | len: %zu\n", dst, len);
 	return (0);
 }

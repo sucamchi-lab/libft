@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:04:50 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:04:56 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:10:50 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:10:51 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_isascii(int c)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("ft_isascii(65) = %d\n", ft_isascii(65));
 	printf("ft_isascii(200) = %d\n", ft_isascii(200));

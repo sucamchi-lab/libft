@@ -48,6 +48,7 @@ La salida del proyecto es el archivo `libft.a` en la raíz del repositorio.
 6. https://www.learn-c.org/en/Linked_lists (listas enlazadas)
 7. https://pythontutor.com/c.html# (debugger online)
 8. https://www.boot.dev/ (curso online de manejo de memoria en C, estructuras de datos y algoritmos)
+9. https://cs50.harvard.edu/x/ (CS50’s Introduction to Computer Science)
 
  Se ha hecho un uso limitado y responsable de la IA para formatear este README.md, refactorizar líneas de código en acorde con la norma y [DRY (Don't Repeat Yourself)](https://www.arsys.es/blog/dont-repeat-yourself-en-programacion), y para aclarar dudas relacionadas con la implementación y funcionalidad de los archivos .c y asegurarme que he entendido el código.
 

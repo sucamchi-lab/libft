@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:08:13 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:08:19 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:13:14 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:13:15 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlen(const char *str)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("ft_strlen(\"Hola\") = %zu\n", ft_strlen("Hola"));
 	printf("ft_strlen(\"\") = %zu\n", ft_strlen(""));

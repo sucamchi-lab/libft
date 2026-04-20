@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:05:04 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:05:10 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:11:10 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:11:21 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_isprint(int c)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("ft_isprint(32) = %d\n", ft_isprint(32));
 	printf("ft_isprint(10) = %d\n", ft_isprint(10));

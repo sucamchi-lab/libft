@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 19:50:05 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/16 13:50:29 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:03:37 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:04:02 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ void	ft_bzero(void *s, size_t n)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	char str[] = "Hello, World!";
+	char	str[] = "Hello, World!";
+
 	printf("Antes: %s\n", str);
 	ft_bzero(str, 5);
 	printf("Despues: %s\n", str);

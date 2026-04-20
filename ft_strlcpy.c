@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:08:06 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:08:12 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:13:29 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:13:30 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	char dst[6];
-	size_t len = ft_strlcpy(dst, "abcdef", sizeof(dst));
+	char	dst[6];
+	size_t	len;
+
+	len = ft_strlcpy(dst, "abcdef", sizeof(dst));
 	printf("dst: %s | len: %zu\n", dst, len);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:04:57 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:05:03 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:11:06 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:11:14 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_isdigit(int c)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("ft_isdigit('9') = %d\n", ft_isdigit('9'));
 	printf("ft_isdigit('x') = %d\n", ft_isdigit('x'));

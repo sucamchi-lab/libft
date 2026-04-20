@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:04:36 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:04:42 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/20 11:10:07 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/20 11:10:09 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_isalnum(int c)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("ft_isalnum('B') = %d\n", ft_isalnum('B'));
 	printf("ft_isalnum('@') = %d\n", ft_isalnum('@'));
