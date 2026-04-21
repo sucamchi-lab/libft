@@ -870,9 +870,9 @@ Divide una cadena en múltiples subcadenas usando un delimitador, devolviendo un
 
 **¿Cómo funciona el código?**
 
-Este es uno de los más complejos. Usa 4 funciones:
+Usa 3 funciones auxiliares, además de la función principal:
 
-1. **`ft_count_words`**: Cuenta cuántas palabras hay
+1. **`ft_count_words`**: Cuenta cuántas palabras hay.
 
 ```c
 static size_t ft_count_words(char const *s, char c)
@@ -884,8 +884,9 @@ static size_t ft_count_words(char const *s, char c)
     {
         while (*s == c)
             s++;
-        if (*s)
-            count++;
+        if (!*s)
+            break ;
+        count++;
         while (*s && *s != c)
             s++;
     }
@@ -898,111 +899,84 @@ static size_t ft_count_words(char const *s, char c)
 - Salta la palabra completa
 - Repite hasta el final
 
-2. **`ft_word_dup`**: Copia una palabra individual
+2. **`ft_free_words`**: Libera memoria en caso de error
 
 ```c
-static char *ft_word_dup(char const *start, size_t len)
+static void ft_free_words(char **split, size_t used)
 {
-    size_t i;
-    char   *word;
-
-    word = (char *)malloc((len + 1) * sizeof(char));
-    if (!word)
-        return (NULL);
-    i = 0;
-    while (i < len)
-    {
-        word[i] = start[i];
-        i++;
-    }
-    word[i] = '\0';
-    return (word);
+    while (used > 0)
+        free(split[--used]);
+    free(split);
 }
 ```
 
-- Reserva memoria para una palabra de longitud `len`
-- Copia carácter por carácter
-- Añade terminador nulo
+- Libera cada cadena ya creada del array
+- Finalmente libera el array de punteros
 
-3. **`ft_free_split`**: Libera memoria en caso de error
+3. **`ft_add_word`**: Procesa y añade una palabra por iteración
 
 ```c
-static void ft_free_split(char **arr, size_t used)
+static int ft_add_word(char **split, size_t *i, char const **s, char c)
 {
-    size_t i;
+    char const  *start;
+    size_t      len;
 
-    i = 0;
-    while (i < used)
-    {
-        free(arr[i]);
-        i++;
-    }
-    free(arr);
+    while (**s == c)
+        (*s)++;
+    if (!**s)
+        return (0);
+    start = *s;
+    len = 0;
+    while ((*s)[len] && (*s)[len] != c)
+        len++;
+    split[*i] = ft_substr(start, 0, len);
+    if (!split[*i])
+        return (-1);
+    *s += len;
+    (*i)++;
+    return (1);
 }
 ```
 
-- Libera cada cadena individual del array
-- Finalmente libera el array mismo
+- Salta delimitadores iniciales
+- Calcula longitud de la palabra actual
+- Guarda la palabra con `ft_substr`
+- Devuelve `1` si añadió palabra, `0` al terminar, `-1` si hay error
 
-4. **`ft_fill_split`**: Llena el array con las palabras
-
-```c
-static int ft_fill_split(char **arr, char const *s, char c)
-{
-    size_t i;
-    size_t len;
-
-    i = 0;
-    while (*s)
-    {
-        while (*s == c)
-            s++;
-        len = 0;
-        while (s[len] && s[len] != c)
-            len++;
-        if (len > 0)
-        {
-            arr[i] = ft_word_dup(s, len);
-            if (!arr[i++])
-            {
-                ft_free_split(arr, i - 1);
-                return (-1);
-            }
-        }
-        s += len;
-    }
-    arr[i] = NULL;
-    return (0);
-}
-```
-
-- Salta delimitadores
-- Calcula la longitud de cada palabra
-- Duplica cada palabra con `ft_word_dup`
-- Si falla, limpia todo con `ft_free_split`
-- Termina el array con NULL
-
-5. **`ft_split`**: Función principal
+4. **`ft_split`**:
 
 ```c
 char **ft_split(char const *s, char c)
 {
-    char **arr;
+    size_t i;
+    int    status;
+    char   **split;
 
     if (!s)
         return (NULL);
-    arr = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
-    if (!arr)
+    split = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
+    if (!split)
         return (NULL);
-    if (ft_fill_split(arr, s, c) == -1)
+    i = 0;
+    status = 1;
+    while (status > 0)
+    {
+        status = ft_add_word(split, &i, &s, c);
+    }
+    if (status < 0)
+    {
+        ft_free_words(split, i);
         return (NULL);
-    return (arr);
+    }
+    split[i] = NULL;
+    return (split);
 }
 ```
 
 - Cuenta las palabras para saber cuántos punteros necesita
 - Reserva array de punteros (+1 para NULL final)
-- Llena el array con `ft_fill_split`
+- Añade palabras iterativamente con `ft_add_word`
+- Si falla una reserva, libera todo con `ft_free_words`
 - Devuelve el array o NULL si hubo error
 
 **Ejemplo:**
@@ -1544,10 +1518,6 @@ Diferencia con `ft_striteri`:
 
 ---
 
-### H. Funciones de Salida
-
-Estas funciones escriben en descriptores de archivo usando la llamada al sistema `write()`.
-
 ### ft_putchar_fd
 
 **Archivo:** `ft_putchar_fd.c`
@@ -2061,11 +2031,6 @@ Crea una nueva lista aplicando una función de transformación a cada contenido 
 **¿Cómo funciona el código?**
 
 ```c
-static void ft_lstclear_newlist(t_list **lst, void (*del)(void *))
-{
-    ft_lstclear(lst, del);
-}
-
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
     t_list *new_list;
@@ -2077,15 +2042,15 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
     new_list = NULL;
     while (lst)
     {
-        content = f(lst->content);  // Transforma el contenido
-        new_node = ft_lstnew(content);  // Crea nuevo nodo
+        content = f(lst->content);
+        new_node = ft_lstnew(content);
         if (!new_node)
         {
-            del(content);  // Libera el contenido creado
-            ft_lstclear_newlist(&new_list, del);  // Limpia lista parcial
+            del(content);
+            ft_lstclear(&new_list, del);
             return (NULL);
         }
-        ft_lstadd_back(&new_list, new_node);  // Añade a la nueva lista
+        ft_lstadd_back(&new_list, new_node);
         lst = lst->next;
     }
     return (new_list);
@@ -2093,15 +2058,12 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 ```
 
 - Verifica que `f` y `del` no sean NULL
-- Para cada nodo de la lista original:
-  1. Aplica `f` al contenido para crear contenido transformado
-  2. Crea nuevo nodo con ese contenido
-  3. **Manejo de errores sofisticado**:
-     - Si falla la creación del nodo:
-       - Libera el contenido recién creado con `del`
-       - Limpia toda la lista parcialmente construida
-       - Devuelve NULL
-  4. Si todo va bien, añade el nuevo nodo a la nueva lista
+- Recorre cada nodo de la lista original y transforma su contenido con `f`
+- Crea un nodo nuevo con `ft_lstnew` y lo añade con `ft_lstadd_back`
+- Si falla la creación de nodo:
+    - Libera el contenido recién creado con `del`
+    - Limpia la lista parcial con `ft_lstclear`
+    - Devuelve NULL
 - Devuelve la nueva lista completa
 
 **Ejemplo:**
