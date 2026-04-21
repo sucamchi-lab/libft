@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:30:40 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/20 11:30:40 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/21 12:18:06 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (str[i] == (unsigned char)c)
-		{
 			return ((void *)(str + i));
-		}
 		i++;
 	}
 	return (NULL);

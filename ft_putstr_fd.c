@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 10:30:09 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 10:30:10 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/21 12:17:12 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
-	{
 		return ;
-	}
 	while (*s)
 	{
 		write(fd, s, 1);

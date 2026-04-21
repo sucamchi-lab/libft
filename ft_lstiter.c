@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:05:46 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:05:52 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/21 14:54:32 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/21 14:54:33 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!f)
-	{
 		return ;
-	}
 	while (lst)
 	{
 		f(lst->content);
@@ -33,10 +31,13 @@ static void	print_node(void *p)
 	printf("%s\n", (char *)p);
 }
 
-int main(void)
+int	main(void)
 {
-	t_list *a = ft_lstnew("uno");
-	t_list *b = ft_lstnew("dos");
+	t_list	*a;
+	t_list	*b;
+
+	a = ft_lstnew("uno");
+	b = ft_lstnew("dos");
 	a->next = b;
 	ft_lstiter(a, print_node);
 	free(b);

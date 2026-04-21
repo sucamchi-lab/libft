@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:05:32 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:05:38 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/21 14:52:31 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/21 14:52:31 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*tmp;
 
 	if (!lst || !del)
-	{
 		return ;
-	}
 	while (*lst)
 	{
 		tmp = (*lst)->next;
@@ -36,10 +34,13 @@ static void	del(void *p)
 	free(p);
 }
 
-int main(void)
+int	main(void)
 {
-	t_list *a = ft_lstnew(ft_strdup("a"));
-	t_list *b = ft_lstnew(ft_strdup("b"));
+	t_list	*a;
+	t_list	*b;
+
+	a = ft_lstnew(ft_strdup("a"));
+	b = ft_lstnew(ft_strdup("b"));
 	a->next = b;
 	ft_lstclear(&a, del);
 	printf("Lista limpia: %p\n", (void *)a);

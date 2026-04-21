@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:31:41 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/20 11:33:17 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/21 12:21:19 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (i >= 0)
 	{
 		if (s[i] == (char)c)
-		{
 			return ((char *)&s[i]);
-		}
 		i--;
 	}
 	return (NULL);

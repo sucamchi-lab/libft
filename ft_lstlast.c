@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:05:53 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:05:59 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/21 14:28:52 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/21 14:28:53 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,22 @@
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
-	{
 		return (NULL);
-	}
 	while (lst->next)
-	{
 		lst = lst->next;
-	}
 	return (lst);
 }
 
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	t_list *a = ft_lstnew("a");
-	t_list *b = ft_lstnew("b");
+	t_list	*a;
+	t_list	*b;
+
+	a = ft_lstnew("a");
+	b = ft_lstnew("b");
 	a->next = b;
 	printf("last: %s\n", (char *)ft_lstlast(a)->content);
 	free(b);

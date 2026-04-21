@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 10:29:22 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 10:29:23 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/21 15:26:19 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s)
-	{
 		return ;
-	}
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }

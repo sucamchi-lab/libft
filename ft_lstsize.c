@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:06:14 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:06:20 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/21 14:28:24 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/21 14:28:24 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,13 @@ int	ft_lstsize(t_list *lst)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	t_list *a = ft_lstnew("a");
-	t_list *b = ft_lstnew("b");
+	t_list	*a;
+	t_list	*b;
+
+	a = ft_lstnew("a");
+	b = ft_lstnew("b");
 	a->next = b;
 	printf("size: %d\n", ft_lstsize(a));
 	free(b);

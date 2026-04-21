@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:06:07 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:06:13 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/21 13:26:42 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/21 13:26:43 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ t_list	*ft_lstnew(void *content)
 
 	new_node = (t_list *)malloc(sizeof(t_list));
 	if (!new_node)
-	{
 		return (NULL);
-	}
 	new_node->content = content;
 	new_node->next = NULL;
 	return (new_node);
@@ -29,9 +27,11 @@ t_list	*ft_lstnew(void *content)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	t_list *node = ft_lstnew("hola");
+	t_list	*node;
+
+	node = ft_lstnew("hola");
 	if (!node)
 		return (1);
 	printf("content: %s\n", (char *)node->content);

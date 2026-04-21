@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 14:04:30 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/20 14:07:44 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/21 12:20:53 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		while (big[i + j] && little[j]
 			&& (i + j) < len
 			&& big[i + j] == little[j])
-		{
 			j++;
-		}
 		if (little[j] == '\0')
 			return ((char *)&big[i]);
 		i++;

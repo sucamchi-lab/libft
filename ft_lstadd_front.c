@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:05:25 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:05:31 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/21 13:26:31 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/21 13:26:33 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
-	{
 		return ;
-	}
 	new->next = *lst;
 	*lst = new;
 }
@@ -25,10 +23,13 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	t_list *lst = ft_lstnew("mundo");
-	t_list *new = ft_lstnew("hola");
+	t_list	*lst;
+	t_list	*new;
+
+	lst = ft_lstnew("mundo");
+	new = ft_lstnew("hola");
 	ft_lstadd_front(&lst, new);
 	printf("primero: %s\n", (char *)lst->content);
 	free(new);

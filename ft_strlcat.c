@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:15:18 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/20 11:15:19 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/21 12:19:59 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dlen = 0;
 	slen = ft_strlen(src);
 	while (dst[dlen] && dlen < size)
-	{
 		dlen++;
-	}
 	if (dlen == size)
-	{
 		return (size + slen);
-	}
 	i = 0;
 	while (src[i] && (dlen + i + 1) < size)
 	{

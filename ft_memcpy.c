@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:29:29 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/20 11:29:30 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/21 12:18:34 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const unsigned char	*s;
 
 	if (!dest && !src)
-	{
 		return (NULL);
-	}
 	i = 0;
 	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;

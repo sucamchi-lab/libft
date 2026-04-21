@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 10:29:48 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 10:29:48 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/21 12:19:14 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 		nb = -nb;
 	}
 	if (nb >= 10)
-	{
 		ft_putnbr_fd((int)(nb / 10), fd);
-	}
 	ft_putchar_fd((char)(nb % 10 + '0'), fd);
 }
 
