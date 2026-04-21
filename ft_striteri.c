@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:07:45 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:07:51 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/21 18:01:22 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/21 18:01:24 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,10 @@ static void	to_upper_even(unsigned int i, char *c)
 		*c -= 32;
 }
 
-int main(void)
+int	main(void)
 {
-	char str[] = "abcdef";
+	char	str[] = "abcdef";
+
 	ft_striteri(str, to_upper_even);
 	printf("striteri: %s\n", str);
 	return (0);

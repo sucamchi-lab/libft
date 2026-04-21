@@ -12,23 +12,19 @@
 
 #include "libft.h"
 
-static size_t	ft_sub_len(size_t slen, unsigned int start, size_t len)
-{
-	if ((size_t)start >= slen)
-		return (0);
-	if (len > slen - start)
-		return (slen - start);
-	return (len);
-}
-
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
+	size_t	slen;
 	size_t	i;
 
 	if (!s)
 		return (NULL);
-	len = ft_sub_len(ft_strlen(s), start, len);
+	slen = ft_strlen(s);
+	if ((size_t)start >= slen)
+		return (ft_strdup(""));
+	if (len > slen - start)
+		len = slen - start;
 	if (len == 0)
 		return (ft_strdup(""));
 	str = (char *)malloc((len + 1) * sizeof(char));
