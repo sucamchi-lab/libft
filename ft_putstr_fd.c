@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:07:17 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:07:23 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/21 10:30:09 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/21 10:30:10 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_putstr_fd(char *s, int fd)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("Salida esperada: hola\n");
 	ft_putstr_fd("hola", 1);

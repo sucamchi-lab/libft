@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:07:03 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:07:09 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/21 10:29:22 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/21 10:29:23 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_putendl_fd(char *s, int fd)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("Salida esperada: linea\n");
 	ft_putendl_fd("linea", 1);

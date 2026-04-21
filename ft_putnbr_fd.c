@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:07:10 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:07:16 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/21 10:29:48 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/21 10:29:48 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_putnbr_fd(int n, int fd)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("Salida esperada: -1234\n");
 	ft_putnbr_fd(-1234, 1);

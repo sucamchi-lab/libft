@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:08:27 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:08:33 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/21 10:34:26 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/21 10:34:27 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("cmp1: %d\n", ft_strncmp("abc", "abc", 3));
 	printf("cmp2: %d\n", ft_strncmp("abc", "abd", 3));

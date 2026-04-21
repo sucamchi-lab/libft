@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:06:56 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:07:02 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/21 10:22:42 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/21 10:22:43 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putchar_fd(char c, int fd)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("Salida esperada: Z\n");
 	ft_putchar_fd('Z', 1);
