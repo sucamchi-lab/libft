@@ -19,7 +19,7 @@ static size_t	ft_count_words(char const *s, char c)
 	count = 0;
 	while (*s)
 	{
-		while (*s == c)
+		while (*s && *s == c)
 			s++;
 		if (!*s)
 			break ;
@@ -42,7 +42,7 @@ static int	ft_add_word(char **split, size_t *i, char const **s, char c)
 	char const	*start;
 	size_t		len;
 
-	while (**s == c)
+	while (**s && **s == c)
 		(*s)++;
 	if (!**s)
 		return (0);
