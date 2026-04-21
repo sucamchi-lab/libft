@@ -18,14 +18,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	if (!s || !f)
-	{
 		return (NULL);
-	}
 	str = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!str)
-	{
 		return (NULL);
-	}
 	i = 0;
 	while (s[i])
 	{
@@ -46,9 +42,11 @@ static char	to_upper_even(unsigned int i, char c)
 	return (c);
 }
 
-int main(void)
+int	main(void)
 {
-	char *res = ft_strmapi("abcdef", to_upper_even);
+	char	*res;
+
+	res = ft_strmapi("abcdef", to_upper_even);
 	if (!res)
 		return (1);
 	printf("strmapi: %s\n", res);

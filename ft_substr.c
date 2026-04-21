@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 14:32:43 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/20 14:32:57 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/21 17:14:02 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,9 @@
 static size_t	ft_sub_len(size_t slen, unsigned int start, size_t len)
 {
 	if ((size_t)start >= slen)
-	{
 		return (0);
-	}
 	if (len > slen - start)
-	{
 		return (slen - start);
-	}
 	return (len);
 }
 
@@ -31,19 +27,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	if (!s)
-	{
 		return (NULL);
-	}
 	len = ft_sub_len(ft_strlen(s), start, len);
 	if (len == 0)
-	{
 		return (ft_strdup(""));
-	}
 	str = (char *)malloc((len + 1) * sizeof(char));
 	if (!str)
-	{
 		return (NULL);
-	}
 	i = 0;
 	while (i < len)
 	{
