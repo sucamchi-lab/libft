@@ -6,78 +6,95 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 12:12:46 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/22 16:46:59 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/22 19:11:38 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_count_words(char const *s, char c)
+static int	ft_count_words(char const *s, char c)
 {
-	size_t	count;
+	int	count;
+	int	i;
 
 	count = 0;
-	while (*s)
+	i = 0;
+	while (s[i])
 	{
-		while (*s && *s == c)
-			s++;
-		if (!*s)
+		while (s[i] && s[i] == c)
+			i++;
+		if (!s[i])
 			break ;
 		count++;
-		while (*s && *s != c)
-			s++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
 	return (count);
 }
 
-static void	ft_free_words(char **split, size_t used)
+static void	ft_free_words(char **split, int used)
 {
-	while (used > 0)
-		free(split[--used]);
+	int	i;
+
+	i = 0;
+	while (i < used)
+		free(split[i++]);
 	free(split);
 }
 
-static int	ft_add_word(char **split, size_t *i, char const **s, char c)
+static int	ft_fill_words(char **split, char const *s, char c)
 {
-	char const	*start;
-	size_t		len;
+	int	i;
+	int	j;
+	int	len;
 
-	while (**s && **s == c)
-		(*s)++;
-	if (!**s)
-		return (0);
-	start = *s;
-	len = 0;
-	while ((*s)[len] && (*s)[len] != c)
-		len++;
-	split[*i] = ft_substr(start, 0, len);
-	if (!split[*i])
-		return (-1);
-	*s += len;
-	(*i)++;
-	return (1);
+	i = 0;
+	j = 0;
+	while (s[j])
+	{
+		while (s[j] && s[j] == c)
+			j++;
+		if (!s[j])
+			break ;
+		len = 0;
+		while (s[j + len] && s[j + len] != c)
+			len++;
+		split[i] = ft_substr(s, j, len);
+		if (!split[i])
+			return (ft_free_words(split, i), -1);
+		i++;
+		j += len;
+	}
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	int		status;
 	char	**split;
 
 	if (!s)
 		return (NULL);
-	split = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
+	split = malloc((ft_count_words(s, c) + 1) * sizeof(char *));
 	if (!split)
 		return (NULL);
-	i = 0;
-	status = 1;
-	while (status > 0)
-		status = ft_add_word(split, &i, &s, c);
-	if (status < 0)
-	{
-		ft_free_words(split, i);
+	if (ft_fill_words(split, s, c) < 0)
 		return (NULL);
-	}
-	split[i] = NULL;
+	split[ft_count_words(s, c)] = NULL;
 	return (split);
 }
+
+/* #include <stdio.h>
+int	main(void)
+{
+	char	**split = ft_split("hola que tal", ' ');
+	int	i = 0;
+
+	while (split[i])
+	{
+		printf("%s", split[i]);
+		free(split[i]);
+		i++;
+	}
+	free(split);
+	return (0);
+} */
