@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 12:12:46 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 15:39:16 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:46:59 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	status = 1;
 	while (status > 0)
-	{
 		status = ft_add_word(split, &i, &s, c);
-	}
 	if (status < 0)
 	{
 		ft_free_words(split, i);
