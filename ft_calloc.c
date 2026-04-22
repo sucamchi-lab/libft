@@ -6,24 +6,25 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:08:43 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/22 19:10:53 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/22 19:23:58 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t number, size_t size)
 {
-	void	*ptr;
+	void	*array;
+	size_t	total;
 
-	if (size != 0 && nmemb > ((size_t)-1) / size)
+	if (size != 0 && number > ((size_t)-1) / size)
 		return (NULL);
-	if (nmemb == 0 || size == 0)
+	total = number * size;
+	if (total == 0)
+		total = 1;
+	array = malloc(total);
+	if (!array)
 		return (NULL);
-	else
-		ptr = malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	ft_bzero(array, total);
+	return (array);
 }
