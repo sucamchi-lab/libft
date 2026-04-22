@@ -18,14 +18,3 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	printf("ft_isdigit('9') = %d\n", ft_isdigit('9'));
-	printf("ft_isdigit('x') = %d\n", ft_isdigit('x'));
-	return (0);
-}
-*/

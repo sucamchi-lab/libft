@@ -38,16 +38,3 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	}
 	return (dest);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	buffer[20] = "123456789";
-
-	ft_memmove(buffer + 2, buffer, 5);
-	printf("Resultado: %s\n", buffer);
-	return (0);
-}
-*/

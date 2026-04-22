@@ -16,15 +16,3 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	printf("Salida esperada: Z\n");
-	ft_putchar_fd('Z', 1);
-	ft_putchar_fd('\n', 1);
-	return (0);
-}
-*/

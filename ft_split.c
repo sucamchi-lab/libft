@@ -83,26 +83,3 @@ char	**ft_split(char const *s, char c)
 	split[i] = NULL;
 	return (split);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	**arr;
-	int		i;
-
-	arr = ft_split("uno dos tres", ' ');
-	if (!arr)
-		return (1);
-	i = 0;
-	while (arr[i])
-	{
-		printf("arr[%d]: %s\n", i, arr[i]);
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
-	return (0);
-}
-*/

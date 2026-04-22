@@ -148,8 +148,16 @@ int ft_isalpha(int c)
 
 **Ejemplo:**
 
-- `ft_isalpha('A')` → devuelve 1
-- `ft_isalpha('5')` → devuelve 0
+```c
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("ft_isalpha('A') = %d\n", ft_isalpha('A'));
+	printf("ft_isalpha('1') = %d\n", ft_isalpha('1'));
+	return (0);
+}
+```
 
 ---
 
@@ -176,8 +184,16 @@ int ft_isdigit(int c)
 
 **Ejemplo:**
 
-- `ft_isdigit('7')` → devuelve 1
-- `ft_isdigit('a')` → devuelve 0
+```c
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("ft_isdigit('9') = %d\n", ft_isdigit('9'));
+	printf("ft_isdigit('x') = %d\n", ft_isdigit('x'));
+	return (0);
+}
+```
 
 ---
 
@@ -204,9 +220,16 @@ int ft_isalnum(int c)
 
 **Ejemplo:**
 
-- `ft_isalnum('B')` → devuelve 1 (es letra)
-- `ft_isalnum('3')` → devuelve 1 (es número)
-- `ft_isalnum('!')` → devuelve 0 (ni letra ni número)
+```c
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("ft_isalnum('B') = %d\n", ft_isalnum('B'));
+	printf("ft_isalnum('@') = %d\n", ft_isalnum('@'));
+	return (0);
+}
+```
 
 ---
 
@@ -233,8 +256,16 @@ int ft_isascii(int c)
 
 **Ejemplo:**
 
-- `ft_isascii(65)` → devuelve 1 (es 'A')
-- `ft_isascii(200)` → devuelve 0 (fuera de rango ASCII)
+```c
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("ft_isascii(65) = %d\n", ft_isascii(65));
+	printf("ft_isascii(200) = %d\n", ft_isascii(200));
+	return (0);
+}
+```
 
 ---
 
@@ -262,8 +293,16 @@ int ft_isprint(int c)
 
 **Ejemplo:**
 
-- `ft_isprint('A')` → devuelve 1
-- `ft_isprint('\n')` → devuelve 0 (carácter de control)
+```c
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("ft_isprint(32) = %d\n", ft_isprint(32));
+	printf("ft_isprint(10) = %d\n", ft_isprint(10));
+	return (0);
+}
+```
 
 ---
 
@@ -291,8 +330,16 @@ int ft_toupper(int c)
 
 **Ejemplo:**
 
-- `ft_toupper('a')` → devuelve 'A' (65)
-- `ft_toupper('Z')` → devuelve 'Z' (sin cambio)
+```c
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("ft_toupper('a') = %c\n", ft_toupper('a'));
+	printf("ft_toupper('Z') = %c\n", ft_toupper('Z'));
+	return (0);
+}
+```
 
 ---
 
@@ -319,8 +366,16 @@ int ft_tolower(int c)
 
 **Ejemplo:**
 
-- `ft_tolower('A')` → devuelve 'a' (97)
-- `ft_tolower('z')` → devuelve 'z' (sin cambio)
+```c
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("ft_tolower('A') = %c\n", ft_tolower('A'));
+	printf("ft_tolower('z') = %c\n", ft_tolower('z'));
+	return (0);
+}
+```
 
 ---
 
@@ -351,8 +406,16 @@ size_t ft_strlen(const char *str)
 
 **Ejemplo:**
 
-- `ft_strlen("Hola")` → devuelve 4
-- `ft_strlen("")` → devuelve 0
+```c
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("ft_strlen(\"Hola\") = %zu\n", ft_strlen("Hola"));
+	printf("ft_strlen(\"\") = %zu\n", ft_strlen(""));
+	return (0);
+}
+```
 
 ---
 
@@ -388,8 +451,18 @@ char *ft_strchr(const char *s, int c)
 
 **Ejemplo:**
 
-- `ft_strchr("Hola", 'l')` → devuelve puntero a "la"
-- `ft_strchr("Hola", 'x')` → devuelve NULL
+```c
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*res;
+
+	res = ft_strchr("libft", 'f');
+	printf("Resultado: %s\n", res);
+	return (0);
+}
+```
 
 ---
 
@@ -426,7 +499,18 @@ char *ft_strrchr(const char *s, int c)
 
 **Ejemplo:**
 
-- `ft_strrchr("Hola mundo", 'o')` → devuelve puntero a la última 'o'.
+```c
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*res;
+
+	res = ft_strrchr("banana", 'a');
+	printf("Resultado: %s\n", res);
+	return (0);
+}
+```
 
 ---
 
@@ -462,8 +546,16 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 
 **Ejemplo:**
 
-- `ft_strncmp("Hola", "Hola", 4)` → devuelve 0 (iguales)
-- `ft_strncmp("abc", "abd", 3)` → devuelve valor negativo ('c' < 'd')
+```c
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("cmp1: %d\n", ft_strncmp("abc", "abc", 3));
+	printf("cmp2: %d\n", ft_strncmp("abc", "abd", 3));
+	return (0);
+}
+```
 
 ---
 
@@ -508,8 +600,18 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 
 **Ejemplo:**
 
-- `ft_strnstr("Hola mundo", "mundo", 20)` → devuelve puntero a "mundo"
-- `ft_strnstr("Hola mundo", "mundo", 4)` → devuelve NULL (límite muy corto)
+```c
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*res;
+
+	res = ft_strnstr("hola mundo", "mundo", 10);
+	printf("Resultado: %s\n", res);
+	return (0);
+}
+```
 
 ---
 
@@ -548,7 +650,19 @@ void *ft_memchr(const void *s, int c, size_t n)
 
 **Ejemplo:**
 
-- `ft_memchr("Hola", 'l', 4)` → devuelve puntero a "la"
+```c
+#include <stdio.h>
+
+int	main(void)
+{
+	char	str[] = "hola";
+	char	*res;
+
+	res = ft_memchr(str, 'l', 4);
+	printf("Resultado: %s\n", res);
+	return (0);
+}
+```
 
 ---
 
@@ -597,9 +711,19 @@ char *ft_strdup(const char *s1)
 **Ejemplo:**
 
 ```c
-char *copia = ft_strdup("Hola");
-// usar copia...
-free(copia);
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*dup;
+
+	dup = ft_strdup("hola");
+	if (!dup)
+		return (1);
+	printf("dup: %s\n", dup);
+	free(dup);
+	return (0);
+}
 ```
 
 ---
@@ -642,10 +766,17 @@ size_t ft_strlcpy(char *dst, const char *src, size_t size)
 **Ejemplo:**
 
 ```c
-char buffer[10];
-size_t len = ft_strlcpy(buffer, "Hola mundo", 10);
-// buffer contendrá "Hola mund\0"
-// len será 10 (longitud de "Hola mundo")
+#include <stdio.h>
+
+int	main(void)
+{
+	char	dst[6];
+	size_t	len;
+
+	len = ft_strlcpy(dst, "abcdef", sizeof(dst));
+	printf("dst: %s | len: %zu\n", dst, len);
+	return (0);
+}
 ```
 
 ---
@@ -697,9 +828,17 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 **Ejemplo:**
 
 ```c
-char buffer[20] = "Hola ";
-ft_strlcat(buffer, "mundo", 20);
-// buffer ahora contiene "Hola mundo"
+#include <stdio.h>
+
+int	main(void)
+{
+	char	dst[12] = "Hola";
+	size_t	len;
+
+	len = ft_strlcat(dst, "42", sizeof(dst));
+	printf("dst: %s | len: %zu\n", dst, len);
+	return (0);
+}
 ```
 
 ---
@@ -714,48 +853,50 @@ Extrae una subcadena desde una posición específica con una longitud determinad
 **¿Cómo funciona el código?**
 
 ```c
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    char   *str;
-    size_t slen;
-    size_t i;
+	char	*str;
+	size_t	slen;
 
-    if (!s)
-        return (NULL);
-    slen = ft_strlen(s);
-    if ((size_t)start >= slen)
-        return (ft_strdup(""));
-    if (len > slen - start)
-        len = slen - start;
-    if (len == 0)
-        return (ft_strdup(""));
-    str = (char *)malloc((len + 1) * sizeof(char));
-    if (!str)
-        return (NULL);
-    i = 0;
-    while (i < len)
-    {
-        str[i] = s[start + i];
-        i++;
-    }
-    str[i] = '\0';
-    return (str);
+	if (!s)
+		return (NULL);
+	slen = ft_strlen(s);
+	if ((size_t)start >= slen)
+		return (ft_strdup(""));
+	if (len > slen - start)
+		len = slen - start;
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	ft_memcpy(str, s + start, len);
+	str[len] = '\0';
+	return (str);
 }
 ```
 
 - Si `s` es NULL, devuelve NULL
 - Si `start` está fuera de la cadena, devuelve cadena vacía con `ft_strdup("")`
-- Ajusta `len` si excede el final de la cadena (`len = slen - start`)
+- Ajusta `len` si excede el final de la cadena 
 - Reserva memoria para `len + 1` caracteres
-- Copia `len` caracteres desde la posición `start`
+- Copia `len` caracteres desde la posición `start` usando `ft_memcpy`
 - Añade terminador nulo y devuelve la nueva subcadena
 
 **Ejemplo:**
 
 ```c
-char *sub = ft_substr("Hola mundo", 5, 5);
-// sub contendrá "mundo"
-free(sub);
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*sub;
+
+	sub = ft_substr("abcdef", 2, 3);
+	if (!sub)
+		return (1);
+	printf("sub: %s\n", sub);
+	free(sub);
+	return (0);
+}
 ```
 
 ---
@@ -797,9 +938,19 @@ char *ft_strjoin(char const *s1, char const *s2)
 **Ejemplo:**
 
 ```c
-char *resultado = ft_strjoin("Hola ", "mundo");
-// resultado contendrá "Hola mundo"
-free(resultado);
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*join;
+
+	join = ft_strjoin("hola", "42");
+	if (!join)
+		return (1);
+	printf("join: %s\n", join);
+	free(join);
+	return (0);
+}
 ```
 
 ---
@@ -850,9 +1001,19 @@ char *ft_strtrim(char const *s1, char const *set)
 **Ejemplo:**
 
 ```c
-char *trimmed = ft_strtrim("   Hola   ", " ");
-// trimmed contendrá "Hola"
-free(trimmed);
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*trim;
+
+	trim = ft_strtrim("--hola--", "-");
+	if (!trim)
+		return (1);
+	printf("trim: %s\n", trim);
+	free(trim);
+	return (0);
+}
 ```
 
 ---
@@ -978,12 +1139,26 @@ char **ft_split(char const *s, char c)
 **Ejemplo:**
 
 ```c
-char **palabras = ft_split("Hola mundo cruel", ' ');
-// palabras[0] = "Hola"
-// palabras[1] = "mundo"
-// palabras[2] = "cruel"
-// palabras[3] = NULL
-// Luego hay que liberar toda la memoria
+#include <stdio.h>
+
+int	main(void)
+{
+	char	**arr;
+	int		i;
+
+	arr = ft_split("uno dos tres", ' ');
+	if (!arr)
+		return (1);
+	i = 0;
+	while (arr[i])
+	{
+		printf("arr[%d]: %s\n", i, arr[i]);
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+	return (0);
+}
 ```
 
 ---
@@ -1022,21 +1197,31 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 - Verifica que `s` y `f` no sean NULL
 - Reserva memoria para la nueva cadena
 - Aplica la función `f` a cada carácter: `f(índice, carácter)`
-- La función `f` puede transformar el carácter según su posición
 - Devuelve la nueva cadena transformada
 
 **Ejemplo:**
 
 ```c
-char mi_funcion(unsigned int i, char c)
+#include <stdio.h>
+
+static char	to_upper_even(unsigned int i, char c)
 {
-    if (i % 2 == 0)
-        return ft_toupper(c);
-    return c;
+	if (i % 2 == 0 && c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }
-char *resultado = ft_strmapi("hola", mi_funcion);
-// resultado = "HoLa" (mayúsculas en posiciones pares)
-free(resultado);
+
+int	main(void)
+{
+	char	*res;
+
+	res = ft_strmapi("abcdef", to_upper_even);
+	if (!res)
+		return (1);
+	printf("strmapi: %s\n", res);
+	free(res);
+	return (0);
+}
 ```
 
 ---
@@ -1072,9 +1257,16 @@ void *ft_memset(void *s, int c, size_t n)
 **Ejemplo:**
 
 ```c
-char buffer[10];
-ft_memset(buffer, 'A', 10);
-// buffer ahora contiene "AAAAAAAAAA"
+#include <stdio.h>
+
+int	main(void)
+{
+	char	str[20] = "abcdef";
+
+	ft_memset(str, 'X', 3);
+	printf("Resultado: %s\n", str);
+	return (0);
+}
 ```
 
 ---
@@ -1102,9 +1294,17 @@ void ft_bzero(void *s, size_t n)
 **Ejemplo:**
 
 ```c
-char buffer[10] = "Hola";
-ft_bzero(buffer, 10);
-// buffer ahora está todo en 0
+#include <stdio.h>
+
+int	main(void)
+{
+	char	str[] = "Hello, World!";
+
+	printf("Antes: %s\n", str);
+	ft_bzero(str, 5);
+	printf("Despues: %s\n", str);
+	return (0);
+}
 ```
 
 ---
@@ -1148,10 +1348,17 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 **Ejemplo:**
 
 ```c
-char src[] = "Hola";
-char dest[5];
-ft_memcpy(dest, src, 5);
-// dest ahora contiene "Hola\0"
+#include <stdio.h>
+
+int	main(void)
+{
+	char	src[] = "12345";
+	char	dst[10];
+
+	ft_memcpy(dst, src, 6);
+	printf("Copia: %s\n", dst);
+	return (0);
+}
 ```
 
 ---
@@ -1257,9 +1464,14 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 **Ejemplo:**
 
 ```c
-char a[] = "Hola";
-char b[] = "Hola";
-ft_memcmp(a, b, 4); // devuelve 0 (iguales)
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("cmp1: %d\n", ft_memcmp("abc", "abc", 3));
+	printf("cmp2: %d\n", ft_memcmp("abc", "abd", 3));
+	return (0);
+}
 ```
 
 ---
@@ -1301,9 +1513,19 @@ void *ft_calloc(size_t count, size_t size)
 **Ejemplo:**
 
 ```c
-int *array = (int *)ft_calloc(10, sizeof(int));
-// array de 10 enteros, todos inicializados a 0
-free(array);
+#include <stdio.h>
+
+int	main(void)
+{
+	int	*arr;
+
+	arr = ft_calloc(4, sizeof(int));
+	if (!arr)
+		return (1);
+	printf("arr[0]=%d arr[3]=%d\n", arr[0], arr[3]);
+	free(arr);
+	return (0);
+}
 ```
 
 ---
@@ -1353,8 +1575,19 @@ int ft_atoi(const char *str)
 
 **Ejemplo:**
 
-- `ft_atoi("  -123")` → devuelve -123
-- `ft_atoi("42abc")` → devuelve 42 (se detiene en 'a')
+```c
+#include <stdio.h>
+
+int	main(void)
+{
+	const char	*str = "   -12345abc";
+	int			result;
+
+	result = ft_atoi(str);
+	printf("%d\n", result);
+	return (0);
+}
+```
 
 ---
 
@@ -1452,9 +1685,17 @@ char *ft_itoa(int n)
 **Ejemplo:**
 
 ```c
-char *num = ft_itoa(-12345);
-// num contendrá "-12345"
-free(num);
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*s;
+
+	s = ft_itoa(-42);
+	printf("itoa: %s\n", s);
+	free(s);
+	return (0);
+}
 ```
 
 ---
@@ -1492,27 +1733,26 @@ void ft_striteri(char *s, void (*f)(unsigned int, char *))
 **Ejemplo:**
 
 ```c
-void mi_funcion(unsigned int i, char *c)
+#include <stdio.h>
+
+static void	to_upper_even(unsigned int i, char *c)
 {
-    *c = ft_toupper(*c);
+	if (i % 2 == 0 && *c >= 'a' && *c <= 'z')
+		*c -= 32;
 }
-char str[] = "hola";
-ft_striteri(str, mi_funcion);
-// str ahora es "HOLA"
+
+int	main(void)
+{
+	char	str[] = "abcdef";
+
+	ft_striteri(str, to_upper_even);
+	printf("striteri: %s\n", str);
+	return (0);
+}
 ```
 
 ---
 
-### ft_strmapi
-
-**Ya documentada en la sección de Manipulación de Cadenas**
-
-Diferencia con `ft_striteri`:
-
-- `ft_strmapi`: Crea nueva cadena, función recibe carácter por valor
-- `ft_striteri`: Modifica cadena original, función recibe puntero a carácter
-
----
 
 ### ft_putchar_fd
 
@@ -1538,8 +1778,15 @@ void ft_putchar_fd(char c, int fd)
 **Ejemplo:**
 
 ```c
-ft_putchar_fd('A', 1);  // Escribe 'A' en stdout (pantalla)
-ft_putchar_fd('!', 2);  // Escribe '!' en stderr
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("Salida esperada: Z\n");
+	ft_putchar_fd('Z', 1);
+	ft_putchar_fd('\n', 1);
+	return (0);
+}
 ```
 
 ---
@@ -1574,7 +1821,15 @@ void ft_putstr_fd(char *s, int fd)
 **Ejemplo:**
 
 ```c
-ft_putstr_fd("Hola mundo", 1);  // Escribe "Hola mundo" en stdout
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("Salida esperada: hola\n");
+	ft_putstr_fd("hola", 1);
+	ft_putchar_fd('\n', 1);
+	return (0);
+}
 ```
 
 ---
@@ -1605,8 +1860,14 @@ void ft_putendl_fd(char *s, int fd)
 **Ejemplo:**
 
 ```c
-ft_putendl_fd("Hola mundo", 1);
-// Escribe "Hola mundo\n" en stdout
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("Salida esperada: linea\n");
+	ft_putendl_fd("linea", 1);
+	return (0);
+}
 ```
 
 ---
@@ -1662,7 +1923,15 @@ ft_putnbr_fd(12345, 1)
 **Ejemplo:**
 
 ```c
-ft_putnbr_fd(-12345, 1);  // Escribe "-12345" en stdout
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("Salida esperada: -1234\n");
+	ft_putnbr_fd(-1234, 1);
+	ft_putchar_fd('\n', 1);
+	return (0);
+}
 ```
 
 ---
@@ -1707,11 +1976,19 @@ t_list *ft_lstnew(void *content)
 **Ejemplo:**
 
 ```c
-int *num = malloc(sizeof(int));
-*num = 42;
-t_list *nodo = ft_lstnew(num);
-// nodo->content apunta a num
-// nodo->next es NULL
+#include <stdio.h>
+
+int	main(void)
+{
+	t_list	*node;
+
+	node = ft_lstnew("hola");
+	if (!node)
+		return (1);
+	printf("content: %s\n", (char *)node->content);
+	free(node);
+	return (0);
+}
 ```
 
 ---
@@ -1751,10 +2028,21 @@ Después: lst → [C] → [A] → [B] → NULL
 **Ejemplo:**
 
 ```c
-t_list *lista = NULL;
-ft_lstadd_front(&lista, ft_lstnew("Segundo"));
-ft_lstadd_front(&lista, ft_lstnew("Primero"));
-// lista: "Primero" → "Segundo" → NULL
+#include <stdio.h>
+
+int	main(void)
+{
+	t_list	*lst;
+	t_list	*new;
+
+	lst = ft_lstnew("mundo");
+	new = ft_lstnew("hola");
+	ft_lstadd_front(&lst, new);
+	printf("primero: %s\n", (char *)lst->content);
+	free(new);
+	free(lst);
+	return (0);
+}
 ```
 
 ---
@@ -1802,10 +2090,21 @@ Después: lst → [A] → [B] → [C] → NULL
 **Ejemplo:**
 
 ```c
-t_list *lista = ft_lstnew("Primero");
-ft_lstadd_back(&lista, ft_lstnew("Segundo"));
-ft_lstadd_back(&lista, ft_lstnew("Tercero"));
-// lista: "Primero" → "Segundo" → "Tercero" → NULL
+#include <stdio.h>
+
+int	main(void)
+{
+	t_list	*a;
+	t_list	*b;
+
+	a = ft_lstnew("a");
+	b = ft_lstnew("b");
+	ft_lstadd_back(&a, b);
+	printf("last: %s\n", (char *)ft_lstlast(a)->content);
+	free(b);
+	free(a);
+	return (0);
+}
 ```
 
 ---
@@ -1838,9 +2137,21 @@ t_list *ft_lstlast(t_list *lst)
 **Ejemplo:**
 
 ```c
-t_list *lista = /* lista con varios nodos */;
-t_list *ultimo = ft_lstlast(lista);
-// ultimo apunta al último nodo de la lista
+#include <stdio.h>
+
+int	main(void)
+{
+	t_list	*a;
+	t_list	*b;
+
+	a = ft_lstnew("a");
+	b = ft_lstnew("b");
+	a->next = b;
+	printf("last: %s\n", (char *)ft_lstlast(a)->content);
+	free(b);
+	free(a);
+	return (0);
+}
 ```
 
 ---
@@ -1877,8 +2188,21 @@ int ft_lstsize(t_list *lst)
 **Ejemplo:**
 
 ```c
-t_list *lista = /* lista: A → B → C → NULL */;
-int tam = ft_lstsize(lista);  // devuelve 3
+#include <stdio.h>
+
+int	main(void)
+{
+	t_list	*a;
+	t_list	*b;
+
+	a = ft_lstnew("a");
+	b = ft_lstnew("b");
+	a->next = b;
+	printf("size: %d\n", ft_lstsize(a));
+	free(b);
+	free(a);
+	return (0);
+}
 ```
 
 ---
@@ -1969,9 +2293,25 @@ Final: lst → NULL
 **Ejemplo:**
 
 ```c
-t_list *lista = /* lista con varios nodos */;
-ft_lstclear(&lista, delete_content);
-// Ahora lista es NULL y toda la memoria está liberada
+#include <stdio.h>
+
+static void	del(void *p)
+{
+	free(p);
+}
+
+int	main(void)
+{
+	t_list	*a;
+	t_list	*b;
+
+	a = ft_lstnew(ft_strdup("a"));
+	b = ft_lstnew(ft_strdup("b"));
+	a->next = b;
+	ft_lstclear(&a, del);
+	printf("Lista limpia: %p\n", (void *)a);
+	return (0);
+}
 ```
 
 ---
@@ -2007,12 +2347,26 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
 **Ejemplo:**
 
 ```c
-void print_content(void *content)
+#include <stdio.h>
+
+static void	print_node(void *p)
 {
-    printf("%s\n", (char *)content);
+	printf("%s\n", (char *)p);
 }
-ft_lstiter(lista, print_content);
-// Imprime el contenido de cada nodo
+
+int	main(void)
+{
+	t_list	*a;
+	t_list	*b;
+
+	a = ft_lstnew("uno");
+	b = ft_lstnew("dos");
+	a->next = b;
+	ft_lstiter(a, print_node);
+	free(b);
+	free(a);
+	return (0);
+}
 ```
 
 ---

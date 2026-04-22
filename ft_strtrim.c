@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scamlett <scamlett@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 21:08:48 by scamlett          #+#    #+#             */
-/*   Updated: 2026/03/28 21:08:54 by scamlett         ###   ########.fr       */
+/*   Created: 2026/04/21 19:28:55 by scamlett          #+#    #+#             */
+/*   Updated: 2026/04/21 19:28:56 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	return (ft_substr(s1, start, end - start));
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*trim;
-
-	trim = ft_strtrim("--hola--", "-");
-	if (!trim)
-		return (1);
-	printf("trim: %s\n", trim);
-	free(trim);
-	return (0);
-}
-*/
