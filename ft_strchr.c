@@ -24,3 +24,15 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s);
 	return (NULL);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*res;
+
+	res = ft_strchr("libft", 'f');
+	printf("Resultado: %s\n", res);
+	return (0);
+}
+*/

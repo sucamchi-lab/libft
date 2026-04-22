@@ -33,3 +33,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[dlen + i] = '\0';
 	return (dlen + slen);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	dst[12] = "Hola";
+	size_t	len;
+
+	len = ft_strlcat(dst, "42", sizeof(dst));
+	printf("dst: %s | len: %zu\n", dst, len);
+	return (0);
+}
+*/

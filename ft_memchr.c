@@ -27,3 +27,16 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	str[] = "hola";
+	char	*res;
+
+	res = ft_memchr(str, 'l', 4);
+	printf("Resultado: %s\n", res);
+	return (0);
+}
+*/

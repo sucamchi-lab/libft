@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:56:02 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 15:01:27 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/22 19:45:57 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
+/*
+void	*duplicate_string(void *content)
+{
+	return (ft_strdup((char *)content));
+}
+
+void	delete_string(void *content)
+{
+	free(content);
+}
+
+	t_list	*original = NULL; // lista de strings
+t_list	*copia = ft_lstmap(original, duplicate_string, delete_string);
+// copia es una nueva lista con copias de los strings
+	*/

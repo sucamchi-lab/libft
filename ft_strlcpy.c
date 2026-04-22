@@ -28,3 +28,16 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	return (ft_strlen(src));
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	dst[6];
+	size_t	len;
+
+	len = ft_strlcpy(dst, "abcdef", sizeof(dst));
+	printf("dst: %s | len: %zu\n", dst, len);
+	return (0);
+}
+*/

@@ -25,3 +25,24 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		*lst = tmp;
 	}
 }
+/*
+#include <stdio.h>
+
+static void	del(void *p)
+{
+	free(p);
+}
+
+int	main(void)
+{
+	t_list	*a;
+	t_list	*b;
+
+	a = ft_lstnew(ft_strdup("a"));
+	b = ft_lstnew(ft_strdup("b"));
+	a->next = b;
+	ft_lstclear(&a, del);
+	printf("Lista limpia: %p\n", (void *)a);
+	return (0);
+}
+*/

@@ -24,3 +24,20 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (count);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	t_list	*a;
+	t_list	*b;
+
+	a = ft_lstnew("a");
+	b = ft_lstnew("b");
+	a->next = b;
+	printf("size: %d\n", ft_lstsize(a));
+	free(b);
+	free(a);
+	return (0);
+}
+*/

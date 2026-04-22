@@ -6,25 +6,34 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:08:43 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/22 19:23:58 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/22 20:02:22 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t number, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	void	*array;
-	size_t	total;
+	void	*ptr;
 
-	if (size != 0 && number > ((size_t)-1) / size)
-		return (NULL);
-	total = number * size;
-	if (total == 0)
-		total = 1;
-	array = malloc(total);
-	if (!array)
-		return (NULL);
-	ft_bzero(array, total);
-	return (array);
+	ptr = malloc(count * size);
+	if (ptr == NULL)
+		return (ptr);
+	ft_bzero(ptr, size * count);
+	return (ptr);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	int	*arr;
+
+	arr = ft_calloc(4, sizeof(int));
+	if (!arr)
+		return (1);
+	printf("arr[0]=%d arr[3]=%d\n", arr[0], arr[3]);
+	free(arr);
+	return (0);
+}
+*/

@@ -64,3 +64,16 @@ char	*ft_itoa(int n)
 	ft_fill_num(str, nb, len);
 	return (str);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*s;
+
+	s = ft_itoa(-42);
+	printf("itoa: %s\n", s);
+	free(s);
+	return (0);
+}
+*/

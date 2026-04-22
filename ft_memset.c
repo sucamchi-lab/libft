@@ -24,3 +24,15 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	str[20] = "abcdef";
+
+	ft_memset(str, 'X', 3);
+	printf("Resultado: %s\n", str);
+	return (0);
+}
+*/

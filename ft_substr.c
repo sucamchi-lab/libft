@@ -31,3 +31,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[len] = '\0';
 	return (str);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*sub;
+
+	sub = ft_substr("abcdef", 2, 3);
+	if (!sub)
+		return (1);
+	printf("sub: %s\n", sub);
+	free(sub);
+	return (0);
+}
+*/

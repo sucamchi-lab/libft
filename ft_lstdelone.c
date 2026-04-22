@@ -19,3 +19,11 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	del(lst->content);
 	free(lst);
 }
+/*
+void delete_content(void *content)
+{
+    free(content);
+}
+t_list *nodo = ft_lstnew(malloc(sizeof(int)));
+ft_lstdelone(nodo, delete_content);
+*/
