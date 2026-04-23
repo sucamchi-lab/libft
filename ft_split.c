@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 12:12:46 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/22 19:11:38 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 11:05:40 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,25 +98,19 @@ int	main(void)
 	free(split);
 	return (0);
 } */
-/*
-#include <stdio.h>
-
-int	main(void)
+/*int	main(void)
 {
-	char	**arr;
-	int		i;
+	// Caso 1: s es NULL
+	char **split1 = ft_split(NULL, ' ');
+	print_split(split1);
 
-	arr = ft_split("uno dos tres", ' ');
-	if (!arr)
-		return (1);
-	i = 0;
-	while (arr[i])
-	{
-		printf("arr[%d]: %s\n", i, arr[i]);
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
+	// Caso 2: separador no aparece
+	char **split2 = ft_split("hola que tal", 'x');
+	print_split(split2);
+
+	// Caso 3: varios separadores seguidos
+	char **split3 = ft_split("hola--que---tal", '-');
+	print_split(split3);
+
 	return (0);
-}
-*/
+}*/
