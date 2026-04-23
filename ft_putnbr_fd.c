@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 10:29:48 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 12:19:14 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:51:32 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	ft_putnbr_fd(int n, int fd)
 
 int	main(void)
 {
-	printf("Salida esperada: -1234\n");
 	ft_putnbr_fd(-1234, 1);
 	ft_putchar_fd('\n', 1);
 	return (0);

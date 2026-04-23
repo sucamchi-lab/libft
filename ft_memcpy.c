@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:29:29 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 12:18:34 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:49:20 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(void)
 	char	dst[10];
 
 	ft_memcpy(dst, src, 6);
-	printf("Copia: %s\n", dst);
+	printf("%s\n", dst);
 	return (0);
 }
 */

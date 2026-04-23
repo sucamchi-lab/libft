@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 12:12:46 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/23 13:20:30 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:52:00 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int	main(void)
 	char **split1 = ft_split(NULL, ' ');
 	print_split(split1);
 
-	// Caso 2: separador no aparece
+	// Caso 2: separador no aparece en string
 	char **split2 = ft_split("hola que tal", 'x');
 	print_split(split2);
 

@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:31:41 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 12:21:19 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:57:13 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(void)
 	char	*res;
 
 	res = ft_strrchr("banana", 'a');
-	printf("Resultado: %s\n", res);
+	printf("%s\n", res);
 	return (0);
 }
 */

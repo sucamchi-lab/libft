@@ -37,7 +37,7 @@ int	main(void)
 	join = ft_strjoin("hola", "42");
 	if (!join)
 		return (1);
-	printf("join: %s\n", join);
+	printf("%s\n", join);
 	free(join);
 	return (0);
 }

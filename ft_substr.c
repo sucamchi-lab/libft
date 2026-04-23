@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 14:32:43 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 19:36:26 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:59:06 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ int	main(void)
 	sub = ft_substr("abcdef", 2, 3);
 	if (!sub)
 		return (1);
-	printf("sub: %s\n", sub);
+	printf("%s\n", sub);
 	free(sub);
 	return (0);
-}
-*/
+}*/

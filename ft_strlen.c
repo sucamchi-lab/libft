@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:13:14 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/20 11:13:15 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:55:50 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ size_t	ft_strlen(const char *str)
 
 int	main(void)
 {
-	printf("ft_strlen(\"Hola\") = %zu\n", ft_strlen("Hola"));
-	printf("ft_strlen(\"\") = %zu\n", ft_strlen(""));
+	printf("%zu\n", ft_strlen("Hola"));
 	return (0);
 }
 */

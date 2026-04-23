@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:11:10 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/20 11:11:21 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:45:43 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	ft_isprint(int c)
 
 int	main(void)
 {
-	printf("ft_isprint(32) = %d\n", ft_isprint(32));
-	printf("ft_isprint(10) = %d\n", ft_isprint(10));
+	printf("%d\n", ft_isprint(32));
+	printf("%d\n", ft_isprint(10));
 	return (0);
 }
 */

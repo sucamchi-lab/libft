@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:15:18 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 12:19:59 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:59:54 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(void)
 	size_t	len;
 
 	len = ft_strlcat(dst, "42", sizeof(dst));
-	printf("dst: %s | len: %zu\n", dst, len);
+	printf("dst: %s | len: %zu", dst, len);
 	return (0);
 }
 */

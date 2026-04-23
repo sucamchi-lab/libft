@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:11:06 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/20 11:11:14 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:45:37 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	ft_isdigit(int c)
 
 int	main(void)
 {
-	printf("ft_isdigit('9') = %d\n", ft_isdigit('9'));
-	printf("ft_isdigit('x') = %d\n", ft_isdigit('x'));
+	printf("%d\n", ft_isdigit('9'));
+	printf("%d\n", ft_isdigit('x'));
 	return (0);
 }
 */

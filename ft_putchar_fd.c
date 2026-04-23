@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 10:22:42 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 10:22:43 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:51:09 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_putchar_fd(char c, int fd)
 
 int	main(void)
 {
-	printf("Salida esperada: Z\n");
 	ft_putchar_fd('Z', 1);
 	ft_putchar_fd('\n', 1);
 	return (0);

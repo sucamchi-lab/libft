@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 14:45:28 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/22 14:45:28 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:56:27 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 /*
 #include <stdio.h>
 
-static char	to_upper_even(unsigned int i, char c)
+static char	to_upper(unsigned int i, char c)
 {
-	if (i % 2 == 0 && c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z')
 		return (c - 32);
 	return (c);
 }
@@ -45,10 +45,10 @@ int	main(void)
 {
 	char	*res;
 
-	res = ft_strmapi("abcdef", to_upper_even);
+	res = ft_strmapi("abcdef", to_upper);
 	if (!res)
 		return (1);
-	printf("strmapi: %s\n", res);
+	printf("%s\n", res);
 	free(res);
 	return (0);
 }

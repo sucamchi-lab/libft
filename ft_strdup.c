@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 14:04:21 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 12:17:03 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:54:09 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(void)
 	dup = ft_strdup("hola");
 	if (!dup)
 		return (1);
-	printf("dup: %s\n", dup);
+	printf("%s\n", dup);
 	free(dup);
 	return (0);
 }

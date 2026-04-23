@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:10:07 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/20 11:10:09 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:45:14 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	ft_isalnum(int c)
 
 int	main(void)
 {
-	printf("ft_isalnum('B') = %d\n", ft_isalnum('B'));
-	printf("ft_isalnum('@') = %d\n", ft_isalnum('@'));
+	printf("%d\n", ft_isalnum('B'));
+	printf("%d\n", ft_isalnum('@'));
 	return (0);
 }
 */

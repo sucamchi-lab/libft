@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:10:50 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/20 11:10:51 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:45:31 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	ft_isascii(int c)
 
 int	main(void)
 {
-	printf("ft_isascii(65) = %d\n", ft_isascii(65));
-	printf("ft_isascii(200) = %d\n", ft_isascii(200));
+	printf("%d\n", ft_isascii(65));
+	printf("%d\n", ft_isascii(200));
 	return (0);
 }
 */

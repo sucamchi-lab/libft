@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 19:28:55 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 19:28:56 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:57:44 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main(void)
 	trim = ft_strtrim("--hola--", "-");
 	if (!trim)
 		return (1);
-	printf("trim: %s\n", trim);
+	printf("%s\n", trim);
 	free(trim);
 	return (0);
 }

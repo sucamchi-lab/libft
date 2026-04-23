@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:29:43 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/20 11:29:43 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:49:08 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 int	main(void)
 {
-	printf("cmp1: %d\n", ft_memcmp("abc", "abc", 3));
-	printf("cmp2: %d\n", ft_memcmp("abc", "abd", 3));
+	printf("%d\n", ft_memcmp("abc", "abc", 3));
+	printf("%d\n", ft_memcmp("abc", "abd", 3));
 	return (0);
 }
 */

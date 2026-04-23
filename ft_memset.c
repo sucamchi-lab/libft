@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:27:17 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/20 11:27:17 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:50:55 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(void)
 	char	str[20] = "abcdef";
 
 	ft_memset(str, 'X', 3);
-	printf("Resultado: %s\n", str);
+	printf("%s\n", str);
 	return (0);
 }
 */
