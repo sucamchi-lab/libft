@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:54:32 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 14:54:33 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 21:38:52 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!f)
 		return ;
-	while (lst)
+	while (lst != NULL)
 	{
 		f(lst->content);
 		lst = lst->next;
@@ -27,7 +27,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 
 static void	print_node(void *p)
 {
-	printf("%s\n", (char *)p);
+	printf("%s", (char *)p);
 }
 
 int	main(void)
@@ -41,6 +41,5 @@ int	main(void)
 	ft_lstiter(a, print_node);
 	free(b);
 	free(a);
-	return (0);
 }
 */

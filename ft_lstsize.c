@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:28:24 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 14:28:24 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 21:39:11 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	count;
 
 	count = 0;
-	while (lst)
+	while (lst != NULL)
 	{
 		count++;
 		lst = lst->next;
@@ -35,9 +35,8 @@ int	main(void)
 	a = ft_lstnew("a");
 	b = ft_lstnew("b");
 	a->next = b;
-	printf("size: %d\n", ft_lstsize(a));
+	printf("%d", ft_lstsize(a));
 	free(b);
 	free(a);
-	return (0);
 }
 */

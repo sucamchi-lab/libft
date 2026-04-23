@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:56:02 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/22 19:45:57 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 21:39:02 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	if (!f || !del)
 		return (NULL);
 	new_list = NULL;
-	while (lst)
+	while (lst != NULL)
 	{
 		content = f(lst->content);
 		new_node = ft_lstnew(content);
@@ -37,17 +37,23 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (new_list);
 }
 /*
-void	*duplicate_string(void *content)
+int	main(void)
 {
-	return (ft_strdup((char *)content));
-}
+	t_list *a;
+	t_list *b;
+	t_list *c;
 
-void	delete_string(void *content)
-{
-	free(content);
-}
-
-	t_list	*original = NULL; // lista de strings
-t_list	*copia = ft_lstmap(original, duplicate_string, delete_string);
-// copia es una nueva lista con copias de los strings
-	*/
+	a = ft_lstnew(ft_strdup("a"));
+	b = ft_lstnew(ft_strdup("b"));
+	c = ft_lstnew(ft_strdup("c"));
+	a->next = b;
+	b->next = c;
+	t_list *mapped = ft_lstmap(a, ft_strdup, free);
+	while (mapped)
+	{
+		printf("%s", (char *)mapped->content);
+		mapped = mapped->next;
+	}
+	ft_lstclear(&a, free);
+	ft_lstclear(&mapped, free);
+}*/

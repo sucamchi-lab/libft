@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:49:14 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 15:25:25 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 21:38:45 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,19 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	free(lst);
 }
 /*
-void delete_content(void *content)
+#include <stdio.h>
+
+void	del(void *content)
 {
-    free(content);
+	if (content)
+		printf("Deleting: %s", (char *)content);
+		free(content);
 }
-t_list *nodo = ft_lstnew(malloc(sizeof(int)));
-ft_lstdelone(nodo, delete_content);
-*/
+
+int	main(void)
+{
+	t_list *node;
+
+	node = ft_lstnew(ft_strdup("hello"));
+	ft_lstdelone(node, del);
+}*/

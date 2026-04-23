@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:44:22 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 14:44:36 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 21:38:25 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,8 @@ int	main(void)
 	a = ft_lstnew("a");
 	b = ft_lstnew("b");
 	ft_lstadd_back(&a, b);
-	printf("last: %s\n", (char *)ft_lstlast(a)->content);
+	printf("%s", (char *)ft_lstlast(a)->content);
 	free(b);
 	free(a);
-	return (0);
 }
 */

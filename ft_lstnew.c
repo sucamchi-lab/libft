@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 13:26:42 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 13:26:43 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 21:36:38 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ int	main(void)
 	t_list	*node;
 
 	node = ft_lstnew("hola");
-	if (!node)
-		return (1);
-	printf("content: %s\n", (char *)node->content);
+	printf("%s", (char *)node->content);
 	free(node);
-	return (0);
 }
 */
