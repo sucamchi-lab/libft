@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 14:04:30 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/21 12:20:53 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/23 16:17:16 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(void)
 	char	*res;
 
 	res = ft_strnstr("hola mundo", "mundo", 10);
-	printf("Resultado: %s\n", res);
+	printf("%s\n", res);
 	return (0);
 }
 */
