@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:08:43 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/23 15:43:53 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/24 11:52:05 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(void)
 	arr = ft_calloc(4, sizeof(int));
 	if (!arr)
 		return (1);
-	printf("arr[0]=%d arr[3]=%d\n", arr[0], arr[3]);
+	printf("%d\n", arr[3]);
 	free(arr);
 	return (0);
 }
