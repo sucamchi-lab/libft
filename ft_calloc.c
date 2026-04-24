@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:08:43 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/24 17:49:40 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/24 19:07:27 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned char	*ptr;
 
-	if (count == 0 || size == 0)
-		return (malloc(1));
-	if (size > ((size_t)-1) / count)
-		return (NULL);
 	ptr = malloc(count * size);
 	if (!ptr)
 		return (NULL);
@@ -27,18 +23,21 @@ void	*ft_calloc(size_t count, size_t size)
 	return (ptr);
 }
 
-/*
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
 	int	*arr;
+	int	i;
 
-	arr = ft_calloc(0, 0);
-	if (!arr)
-		return (1);
-	printf("%d\n", arr[3]);
+	arr = ft_calloc(3, 5);
+	printf("%p\n", arr);
+	i = 0;
+	while (i < 5)
+	{
+		printf("%d ", arr[i]);
+		i++;
+	}
 	free(arr);
 	return (0);
-}
-*/
+}*/
