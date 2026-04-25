@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:08:43 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/25 16:21:11 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/25 16:32:35 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdint.h>
 
 /*
-It is necessary to check for integer overflows in count * size
+It is necessary to check for integer overflows in (count * size)
 before calling malloc. If the result overflows, malloc may allocate less memory
 than expected, leading to buffer overflows or memory leaks. This implementation
 uses (size_t)-1 to represent the maximum value of size_t for the check.
