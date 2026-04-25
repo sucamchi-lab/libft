@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:56:02 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/23 21:39:02 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/25 21:21:54 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,23 +37,25 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (new_list);
 }
 /*
+#include <stdio.h>
+
 int	main(void)
 {
-	t_list *a;
-	t_list *b;
-	t_list *c;
+	t_list	*lst;
+	t_list	*new_lst;
+	int		i;
 
-	a = ft_lstnew(ft_strdup("a"));
-	b = ft_lstnew(ft_strdup("b"));
-	c = ft_lstnew(ft_strdup("c"));
-	a->next = b;
-	b->next = c;
-	t_list *mapped = ft_lstmap(a, ft_strdup, free);
-	while (mapped)
+	lst = ft_lstnew("Hello");
+	ft_lstadd_back(&lst, ft_lstnew("World"));
+	ft_lstadd_back(&lst, ft_lstnew("42"));
+	new_lst = ft_lstmap(lst, (void *(*)(void *))ft_strdup, free);
+	i = 0;
+	while (new_lst)
 	{
-		printf("%s", (char *)mapped->content);
-		mapped = mapped->next;
+		printf("%s\n", (char *)new_lst->content);
+		new_lst = new_lst->next;
+		i++;
 	}
-	ft_lstclear(&a, free);
-	ft_lstclear(&mapped, free);
-}*/
+	return (0);
+}
+*/
