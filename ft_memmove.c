@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 13:26:33 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/25 20:42:57 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/26 09:13:18 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,26 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	size_t				count;
-	unsigned char		*ptr;
-	const unsigned char	*str;
+	size_t				i;
+	unsigned char		*d;
+	const unsigned char	*s;
 
 	if (!dest && !src)
 		return (NULL);
-	ptr = (unsigned char *)dest;
-	str = (const unsigned char *)src;
-	if (str < ptr && (str + len) > ptr)
+	d = (unsigned char *)dest;
+	s = (const unsigned char *)src;
+	if (s < d && (s + len) > d)
 	{
 		while (len--)
-			ptr[len] = str[len];
+			d[len] = s[len];
 	}
 	else
 	{
-		count = 0;
-		while (count < len)
+		i = 0;
+		while (i < len)
 		{
-			ptr[count] = str[count];
-			count++;
+			d[i] = s[i];
+			i++;
 		}
 	}
 	return (dest);
