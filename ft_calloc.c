@@ -6,12 +6,11 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:08:43 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/25 16:32:35 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/27 21:47:16 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
 
 /*
 It is necessary to check for integer overflows in (count * size)
