@@ -1032,20 +1032,22 @@ Usa 3 funciones auxiliares, además de la función principal:
 1. **`ft_count_words`**: Cuenta cuántas palabras hay.
 
 ```c
-static size_t ft_count_words(char const *s, char c)
+static int ft_count_words(char const *s, char c)
 {
-    size_t count;
+    int count;
+    int i;
 
     count = 0;
-    while (*s)
+    i = 0;
+    while (s[i])
     {
-        while (*s == c)
-            s++;
-        if (!*s)
+        while (s[i] && s[i] == c)
+            i++;
+        if (!s[i])
             break ;
         count++;
-        while (*s && *s != c)
-            s++;
+        while (s[i] && s[i] != c)
+            i++;
     }
     return (count);
 }
@@ -1059,10 +1061,13 @@ static size_t ft_count_words(char const *s, char c)
 2. **`ft_free_words`**: Libera memoria en caso de error
 
 ```c
-static void ft_free_words(char **split, size_t used)
+static void ft_free_words(char **split, int used)
 {
-    while (used > 0)
-        free(split[--used]);
+    int i;
+
+    i = 0;
+    while (i < used)
+        free(split[i++]);
     free(split);
 }
 ```
@@ -1070,69 +1075,63 @@ static void ft_free_words(char **split, size_t used)
 - Libera cada cadena ya creada del array
 - Finalmente libera el array de punteros
 
-3. **`ft_add_word`**: Procesa y añade una palabra por iteración
+3. **`ft_fill_words`**: Recorre la cadena y rellena el array
 
 ```c
-static int ft_add_word(char **split, size_t *i, char const **s, char c)
+static int ft_fill_words(char **split, char const *s, char c)
 {
-    char const  *start;
-    size_t      len;
+    int i;
+    int j;
+    int len;
 
-    while (**s == c)
-        (*s)++;
-    if (!**s)
-        return (0);
-    start = *s;
-    len = 0;
-    while ((*s)[len] && (*s)[len] != c)
-        len++;
-    split[*i] = ft_substr(start, 0, len);
-    if (!split[*i])
-        return (-1);
-    *s += len;
-    (*i)++;
-    return (1);
+    i = 0;
+    j = 0;
+    while (s[j])
+    {
+        while (s[j] && s[j] == c)
+            j++;
+        if (!s[j])
+            break ;
+        len = 0;
+        while (s[j + len] && s[j + len] != c)
+            len++;
+        split[i] = ft_substr(s, j, len);
+        if (!split[i])
+            return (ft_free_words(split, i), -1);
+        i++;
+        j += len;
+    }
+    return (0);
 }
 ```
 
 - Salta delimitadores iniciales
-- Calcula longitud de la palabra actual
-- Guarda la palabra con `ft_substr`
-- Devuelve `1` si añadió palabra, `0` al terminar, `-1` si hay error
+- Calcula la longitud de cada palabra con un índice auxiliar
+- Guarda cada palabra con `ft_substr`
+- Si una reserva falla, libera lo ya creado y devuelve `-1`
 
 4. **`ft_split`**:
 
 ```c
 char **ft_split(char const *s, char c)
 {
-    size_t i;
-    int    status;
-    char   **split;
+    char    **split;
 
     if (!s)
         return (NULL);
-    split = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
+    split = malloc((ft_count_words(s, c) + 1) * sizeof(char *));
     if (!split)
         return (NULL);
-    i = 0;
-    status = 1;
-    while (status > 0)
-    {
-        status = ft_add_word(split, &i, &s, c);
-    }
-    if (status < 0)
-    {
-        ft_free_words(split, i);
+    if (ft_fill_words(split, s, c) < 0)
         return (NULL);
-    }
-    split[i] = NULL;
+    split[ft_count_words(s, c)] = NULL;
     return (split);
 }
 ```
 
 - Cuenta las palabras para saber cuántos punteros necesita
 - Reserva array de punteros (+1 para NULL final)
-- Añade palabras iterativamente con `ft_add_word`
+- Rellena el array con `ft_fill_words`
 - Si falla una reserva, libera todo con `ft_free_words`
 - Devuelve el array o NULL si hubo error
 
@@ -1403,17 +1402,17 @@ void *ft_memmove(void *dest, const void *src, size_t len)
         return (NULL);
     d = (char *)dest;
     s = (const char *)src;
-    if (d < s)
-        ft_copy_forward(d, s, len);
-    else
+    if (s < d && (s + len) > d)
         ft_copy_backward(d, s, len);
+    else
+        ft_copy_forward(d, s, len);
     return (dest);
 }
 ```
 
-- **Clave**: Detecta si `dest` está antes o después de `src` en memoria
-- Si `dest < src`: copia de adelante hacia atrás (normal)
-- Si `dest >= src`: copia de atrás hacia adelante (para evitar sobrescribir datos que aún no se han copiado)
+- **Clave**: Detecta si las regiones realmente se solapan antes de copiar hacia atrás
+- Si `src` está antes que `dest` y el rango de `src` alcanza `dest`, copia hacia atrás
+- En cualquier otro caso, copia hacia adelante
 - Esto previene corrupción cuando las áreas de memoria se solapan
 
 **Ejemplo de solapamiento:**
@@ -1488,14 +1487,11 @@ Reserva memoria para un array e inicializa todos los bytes a cero.
 ```c
 void *ft_calloc(size_t count, size_t size)
 {
-    void *ptr;
+    unsigned char *ptr;
 
     if (size != 0 && count > ((size_t)-1) / size)
         return (NULL);
-    if (count == 0 || size == 0)
-        ptr = malloc(1);
-    else
-        ptr = malloc(count * size);
+    ptr = malloc(count * size);
     if (!ptr)
         return (NULL);
     ft_bzero(ptr, count * size);
@@ -1505,7 +1501,7 @@ void *ft_calloc(size_t count, size_t size)
 
 - **Protección contra overflow**: Verifica que `count * size` no desborde
   - Si `size != 0` y `count > SIZE_MAX / size`, hay overflow → devuelve NULL
-- Caso especial: si `count` o `size` es 0, reserva 1 byte (comportamiento estándar)
+- Si `count` o `size` es 0, `malloc` recibe 0 bytes
 - Reserva `count * size` bytes con `malloc`
 - Inicializa todo a cero con `ft_bzero`
 - **Importante para seguridad**: La verificación de overflow previene vulnerabilidades
