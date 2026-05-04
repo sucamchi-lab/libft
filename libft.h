@@ -6,13 +6,14 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:11:34 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/24 19:07:08 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/05/04 23:43:49 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdarg.h>
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -58,6 +59,14 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+int					ft_printf(char const *fmt, ...);
+void				ft_putchar(char c, int *output);
+void				ft_putnbr(int nb, int *output);
+void				ft_putstr(char *str, int *output);
+void				ft_putvoid(void *ptr, int *output);
+void				ft_putunsig(unsigned int nb, int *output);
+void				ft_puthex(unsigned int nb, int *output);
+void				ft_putupphex(unsigned int nb, int *output);
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);

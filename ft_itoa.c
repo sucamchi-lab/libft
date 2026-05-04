@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 10:21:46 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/23 15:46:21 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/05/04 23:45:32 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_num_len(long n)
 	return (len);
 }
 
-static void	ft_putnbr(char *str, long nb, int len)
+static void	ft_itoa_putnbr(char *str, long nb, int len)
 {
 	while (nb > 0)
 	{
@@ -61,7 +61,7 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 		nb = -nb;
 	}
-	ft_putnbr(str, nb, len);
+	ft_itoa_putnbr(str, nb, len);
 	return (str);
 }
 /*
